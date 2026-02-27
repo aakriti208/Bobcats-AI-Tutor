@@ -3,13 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SimpleRAG - Question Answering</title>
+    <title>Texas State University - Canvas AI Tutor</title>
     <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>AI Tutor</h1>
+        <div class="header-content">
+          <div class="header-top">
+            <div class="logo-section">
+              <div class="logo">
+                <img src="/static/supercat-logo.png" alt="Supercat Logo" style="width: 100%; height: 100%; object-fit: contain; padding: 4px;" />
+              </div>
+              <div class="logo-text">
+                <h1 class="system-name">Bobcat AI Tutor</h1>
+                <p class="system-subtitle">
+                  RAG-Powered Intelligent Learning Assistant
+                </p>
+              </div>
+            </div>
+            <div class="header-controls">
+              <div class="system-status">
+                <span class="status-dot"></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
 
       <main>
@@ -19,14 +38,14 @@
               <textarea
                 id="question-input"
                 name="question"
-                placeholder="Ask a question..."
-                rows="3"
+                placeholder="Ask a question about your course materials... (e.g., 'What are the main concepts in Chapter 3?', 'Explain the assignment requirements', 'When is the midterm exam?')"
+                rows="4"
                 required
               ></textarea>
             </div>
             <div class="controls">
-              <label for="top-k"
-                >Results:
+              <label for="top-k">
+                Number of sources:
                 <input type="number" id="top-k" value="3" min="1" max="10" />
               </label>
               <button type="submit" id="submit-btn">Ask Question</button>
@@ -43,26 +62,26 @@
 
         <div id="results" class="results hidden">
           <section class="comparison-section">
-            <h2>Answer Comparison</h2>
+            <h2>📊 Answer Comparison</h2>
             <div class="comparison-container">
               <div class="answer-panel with-rag">
-                <h3>With Canvas Materials (RAG)</h3>
+                <h3>🐾 Bobcat AI Tutor</h3>
                 <div id="answer-with-rag" class="answer-text"></div>
               </div>
               <div class="answer-panel without-rag">
-                <h3>Without Canvas Materials (Ollama Only)</h3>
+                <h3>🤖 Local LLM</h3>
                 <div id="answer-without-rag" class="answer-text"></div>
               </div>
             </div>
           </section>
 
           <section class="contexts-section">
-            <h2>Retrieved Canvas Materials</h2>
+            <h2>📚 Retrieved Canvas Materials</h2>
             <div id="contexts-container"></div>
           </section>
 
           <details class="additional-info">
-            <summary>Additional Information</summary>
+            <summary>🔍 Additional Information</summary>
             <div class="info-content">
               <div class="info-section">
                 <h3>Knowledge Base Context</h3>

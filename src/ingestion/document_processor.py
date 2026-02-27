@@ -66,7 +66,9 @@ class DocumentProcessor:
             # Convert table to readable text format
             rows = []
             for row in table.find_all('tr'):
-                cells = [cell.get_text(strip=True) for cell in row.find_all(['td', 'th'])]
+                # Use separator to properly handle multiple elements within cells
+                # This prevents "Item1Item2" and instead produces "Item1, Item2"
+                cells = [cell.get_text(separator=', ', strip=True) for cell in row.find_all(['td', 'th'])]
                 if cells:  # Only add non-empty rows
                     rows.append(' | '.join(cells))
 

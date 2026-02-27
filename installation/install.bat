@@ -2,9 +2,77 @@
 REM SimpleRAG Installation Script for Windows
 REM This script automates the installation of SimpleRAG for Canvas LMS
 
+setlocal EnableDelayedExpansion
+
+REM Initialize variables
+set "CANVAS_API_TOKEN="
+set "CANVAS_COURSE_IDS="
+set "CANVAS_BASE_URL=https://canvas.yourinstitution.edu/"
+
+REM Parse command-line arguments
+:parse_args
+if "%~1"=="" goto check_args
+if /i "%~1"=="--token" (
+    set "CANVAS_API_TOKEN=%~2"
+    shift
+    shift
+    goto parse_args
+)
+if /i "%~1"=="--courses" (
+    set "CANVAS_COURSE_IDS=%~2"
+    shift
+    shift
+    goto parse_args
+)
+if /i "%~1"=="--help" (
+    goto show_usage
+)
+echo [ERROR] Unknown option: %~1
+echo.
+goto show_usage
+
+:show_usage
 echo ==========================================
 echo SimpleRAG Installation Script
 echo ==========================================
+echo.
+echo Usage:
+echo   %~nx0 --token ^<API_TOKEN^> --courses ^<COURSE_IDS^>
+echo.
+echo Required Arguments:
+echo   --token ^<API_TOKEN^>      Your Canvas API token
+echo   --courses ^<COURSE_IDS^>   Comma-separated course IDs (e.g., 12345,67890)
+echo.
+echo Options:
+echo   --help                   Show this help message
+echo.
+echo Example:
+echo   %~nx0 --token abc123xyz --courses 12345,67890
+echo.
+pause
+exit /b 1
+
+:check_args
+if "%CANVAS_API_TOKEN%"=="" (
+    echo [ERROR] Missing required argument: --token
+    echo.
+    goto show_usage
+)
+if "%CANVAS_COURSE_IDS%"=="" (
+    echo [ERROR] Missing required argument: --courses
+    echo.
+    goto show_usage
+)
+
+echo ==========================================
+echo SimpleRAG Installation Script
+echo ==========================================
+echo.
+echo [INFO] Configuration:
+echo   Canvas URL: %CANVAS_BASE_URL%
+echo   Course IDs: %CANVAS_COURSE_IDS%
+set "TOKEN_PREVIEW=%CANVAS_API_TOKEN:~0,10%"
+echo   API Token: %TOKEN_PREVIEW%...
 echo.
 
 REM Check for Python
@@ -52,13 +120,34 @@ echo [SUCCESS] Python dependencies installed
 
 REM Setup environment file
 echo [INFO] Setting up environment configuration...
-if not exist ".env" (
-    copy .env.template .env >nul
-    echo [SUCCESS] Created .env file from template
-    echo [INFO] Please edit .env file with your Canvas API credentials
-) else (
-    echo [INFO] .env file already exists (skipping)
+if exist ".env" (
+    echo [INFO] Backing up existing .env file to .env.backup
+    copy /Y .env .env.backup >nul
 )
+
+REM Create .env file with provided configuration
+(
+echo # Canvas API Configuration
+echo CANVAS_API_TOKEN=%CANVAS_API_TOKEN%
+echo CANVAS_BASE_URL=%CANVAS_BASE_URL%
+echo CANVAS_COURSE_IDS=%CANVAS_COURSE_IDS%
+echo.
+echo # Optional: Override default settings
+echo EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+echo OLLAMA_MODEL=gemma:2b
+echo TOP_K_RESULTS=3
+echo SIMILARITY_THRESHOLD=0.5
+echo.
+echo # Ingestion Settings
+echo INGEST_BATCH_SIZE=100
+echo INGEST_MAX_WORKERS=4
+echo INGEST_CONTENT_TYPES=module,page,assignment,announcement,discussion,file
+echo PDF_EXTRACTION_TIMEOUT=30
+echo MAX_FILE_SIZE_MB=50
+echo LOG_LEVEL=INFO
+) > .env
+
+echo [SUCCESS] Created .env file with your configuration
 
 REM Check for Ollama
 echo [INFO] Checking for Ollama installation...
@@ -98,21 +187,25 @@ echo ==========================================
 echo Installation Complete!
 echo ==========================================
 echo.
+echo Your .env file has been configured with:
+echo   Canvas URL: %CANVAS_BASE_URL%
+echo   Course IDs: %CANVAS_COURSE_IDS%
+echo.
 echo Next steps:
 echo.
-echo 1. Configure your Canvas API credentials:
-echo    Edit the .env file with your Canvas API token and course IDs
-echo.
-echo 2. Activate the virtual environment (in new terminal sessions):
+echo 1. Activate the virtual environment (in new terminal sessions):
 echo    venv\Scripts\activate.bat
 echo.
-echo 3. Ingest your Canvas content:
+echo 2. Ingest your Canvas content:
 echo    python scripts\ingest_data.py --course YOUR_COURSE_ID --full
+echo    (Replace YOUR_COURSE_ID with one of: %CANVAS_COURSE_IDS%)
 echo.
-echo 4. Start the web interface:
+echo 3. Start the web interface:
 echo    python app.py
 echo    Then visit: http://localhost:8000
 echo.
-echo For help, see README.md or contact STEM CLEAR support
+echo Note: To modify settings, edit the .env file in the project root
+echo.
+echo For help, see README.md or contact support
 echo.
 pause
