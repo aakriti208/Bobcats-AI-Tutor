@@ -11,8 +11,10 @@ RAW_DATA_DIR = DATA_DIR / "raw"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
 CHROMA_DB_DIR = DATA_DIR / "chroma_db"
 
+STORAGE_DIR = DATA_DIR / "storage"
+
 # Create directories if they don't exist
-for dir_path in [RAW_DATA_DIR, PROCESSED_DATA_DIR, CHROMA_DB_DIR]:
+for dir_path in [RAW_DATA_DIR, PROCESSED_DATA_DIR, CHROMA_DB_DIR, STORAGE_DIR]:
     dir_path.mkdir(parents=True, exist_ok=True)
 
 # Canvas API settings

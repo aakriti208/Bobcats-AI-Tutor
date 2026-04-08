@@ -22,7 +22,14 @@ lxml>=4.9.0
 pypdf>=3.0.0
 python-pptx>=0.6.21
 
+# LlamaIndex (RAG framework)
+llama-index-core>=0.10.0
+llama-index-vector-stores-chroma>=0.1.0
+llama-index-embeddings-huggingface>=0.2.0
+llama-index-llms-ollama>=0.1.0
+
 # Web Interface
 fastapi>=0.104.0
 uvicorn[standard]>=0.24.0
 pydantic>=2.5.0
+streamlit>=1.32.0
