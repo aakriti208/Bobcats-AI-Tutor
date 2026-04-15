@@ -14,16 +14,17 @@ __pycache__/
 *.so
 .Python
 
-# ChromaDB data 
-data/chroma_db/
-
-# Metadata and logs
+# Metadata and logs (runtime artifacts — not needed for deployment)
 data/metadata/
 data/logs/
 
-# Raw and processed data 
+# Raw and processed data (source files, not needed after ingestion)
 data/raw/
 data/processed/
+
+# Keep these (committed for deployment — no re-ingestion needed on server):
+# data/chroma_db/   ← vector store
+# data/storage/     ← LlamaIndex index
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/

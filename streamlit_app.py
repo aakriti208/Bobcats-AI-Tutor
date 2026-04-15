@@ -28,8 +28,13 @@ from src.config import (
     CHROMA_DB_DIR,
     STORAGE_DIR,
     EMBEDDING_MODEL,
+    LLM_PROVIDER,
     OLLAMA_BASE_URL,
     OLLAMA_MODEL,
+    OPENAI_API_KEY,
+    OPENAI_MODEL,
+    GROQ_API_KEY,
+    GROQ_MODEL,
 )
 
 CHROMA_COLLECTION_NAME = "course_content"
@@ -160,12 +165,28 @@ _PROMPT_STRICT = (
 
 def _build_engine(mode: str, temperature: float, deep_search: bool):
     """Build a fresh chat engine for the given settings."""
-    llm = Ollama(
-        model=OLLAMA_MODEL,
-        base_url=OLLAMA_BASE_URL,
-        temperature=temperature,
-        request_timeout=180.0,
-    )
+    if LLM_PROVIDER == "openai":
+        from llama_index.llms.openai import OpenAI
+        llm = OpenAI(
+            model=OPENAI_MODEL,
+            api_key=OPENAI_API_KEY,
+            temperature=temperature,
+        )
+    elif LLM_PROVIDER == "groq":
+        from llama_index.llms.groq import Groq
+        llm = Groq(
+            model=GROQ_MODEL,
+            api_key=GROQ_API_KEY,
+            temperature=temperature,
+        )
+    else:
+        llm = Ollama(
+            model=OLLAMA_MODEL,
+            base_url=OLLAMA_BASE_URL,
+            temperature=temperature,
+            request_timeout=600.0,
+            additional_kwargs={"num_predict": 256},
+        )
 
     if mode == "General AI (No RAG)":
         return SimpleChatEngine.from_defaults(
@@ -180,14 +201,14 @@ def _build_engine(mode: str, temperature: float, deep_search: bool):
         return None
 
     system_text = _PROMPT_SUPPORTIVE if mode.startswith("Supportive") else _PROMPT_STRICT
-    k = 15 if deep_search else 5
+    k = 4 if deep_search else 2
 
     return index.as_chat_engine(
         chat_mode="context",
         llm=llm,
         system_prompt=system_text,
         similarity_top_k=k,
-        streaming=False,
+        streaming=True,
     )
 
 
@@ -234,11 +255,10 @@ if prompt := st.chat_input("Ask about your course..."):
                 st.error("Knowledge base not loaded. Please run ingestion first.")
                 rag_text = ""
             else:
+                rag_engine = _build_engine(mode, temp, deep_search)
                 with st.spinner("Searching course materials..."):
-                    rag_engine = _build_engine(mode, temp, deep_search)
-                    rag_response = rag_engine.chat(enhanced_prompt)
-                    rag_text = rag_response.response
-                    st.markdown(rag_text)
+                    rag_response = rag_engine.stream_chat(enhanced_prompt)
+                rag_text = st.write_stream(rag_response.response_gen)
 
                 # Citations from retrieved nodes
                 if hasattr(rag_response, "source_nodes") and rag_response.source_nodes:
@@ -271,11 +291,11 @@ if prompt := st.chat_input("Ask about your course..."):
         st.subheader("General AI")
         st.caption("General knowledge only — no course materials")
         with st.chat_message("assistant", avatar="🤖"):
+            general_engine = _build_engine("General AI (No RAG)", temp, False)
             with st.spinner("Thinking..."):
-                general_engine = _build_engine("General AI (No RAG)", temp, False)
-                gen_response = general_engine.chat(enhanced_prompt)
-                gen_text = gen_response.response
-                st.markdown(gen_text)
+                gen_response = general_engine.stream_chat(enhanced_prompt)
+            st.write_stream(gen_response.response_gen)
+            gen_text = gen_response.response
 
     # Save RAG answer to history
     if rag_text:
