@@ -49,12 +49,13 @@ CANVAS_COURSE_IDS=course_id1,course_id2
 1. Log in to Canvas and go to **Account** (top-left avatar)
 2. Click **Settings**
 3. Scroll down to **Approved Integrations** and click **+ New Access Token**
-4. Enter a purpose (e.g. "SimpleRAG") and an optional expiry date
-5. Click **Generate Token** and copy it — you won't be able to see it again
+4. Enter a purpose (e.g. "Bobcat AI Tutor") and an optional expiry date
+5. Click **Generate Token** and copy it as you won't be able to see it again
 
 #### Finding Your Course ID
 
 Open the course in Canvas — the number in the URL is the course ID:
+
 ```
 https://canvas.yourinstitution.edu/courses/12345
                                              ^^^^^
@@ -112,13 +113,3 @@ python rag_demo.py
 - "Explain text preprocessing"
 - "What are the assignments in this course?"
 - "Tell me about the syllabus"
-
-## Architecture
-
-```
-Canvas API → CanvasClient → ContentHandlers → DocumentProcessor → Embedder → ChromaDB
-              (fetch)          (extract)         (clean/chunk)    (vectorize)  (store)
-
-User Query → Embedder → ChromaDB → Retriever → Generator → Answer
-            (vectorize)  (search)    (rank)     (LLM)
-```
