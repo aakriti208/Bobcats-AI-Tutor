@@ -4,6 +4,15 @@
 
 set -e  # Exit on error
 
+# Get the directory where this script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# Change to the project root directory (parent of installation/)
+PROJECT_ROOT="$( cd "$SCRIPT_DIR/.." && pwd )"
+cd "$PROJECT_ROOT"
+
+echo "Working directory: $PROJECT_ROOT"
+echo ""
+
 # Color codes for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -90,14 +99,24 @@ echo ""
 
 # Check Python version
 print_info "Checking Python installation..."
-if command -v python3.11 &> /dev/null; then
+
+# Check if pyenv is available
+if command -v pyenv &> /dev/null; then
+    print_info "Detected pyenv - configuring Python 3.11.9 for this project..."
+    # Set local Python version to 3.11.9 for this directory
+    pyenv local 3.11.9
+    PYTHON_CMD="python"
+    print_success "Python configured via pyenv: $(python --version)"
+elif command -v python3.11 &> /dev/null; then
     PYTHON_CMD=python3.11
+    print_success "Python found: $($PYTHON_CMD --version)"
 elif command -v python3 &> /dev/null; then
     PYTHON_VERSION=$(python3 --version 2>&1 | awk '{print $2}')
     MAJOR=$(echo $PYTHON_VERSION | cut -d. -f1)
     MINOR=$(echo $PYTHON_VERSION | cut -d. -f2)
     if [ "$MAJOR" -ge 3 ] && [ "$MINOR" -ge 11 ]; then
         PYTHON_CMD=python3
+        print_success "Python found: $($PYTHON_CMD --version)"
     else
         print_error "Python 3.11+ is required. Found: $PYTHON_VERSION"
         echo "Please install Python 3.11 or newer from https://www.python.org/"
@@ -108,7 +127,6 @@ else
     echo "Please install Python 3.11+ from https://www.python.org/"
     exit 1
 fi
-print_success "Python found: $($PYTHON_CMD --version)"
 
 # Create virtual environment
 print_info "Creating virtual environment..."
