@@ -1,27 +1,89 @@
+import logging
 import requests
 from typing import List, Dict, Tuple
-from src.config import OLLAMA_BASE_URL, OLLAMA_MODEL
+from src.config import (
+    OLLAMA_BASE_URL, OLLAMA_MODEL,
+    GROK_API_KEY, GROK_BASE_URL, GROK_MODEL,
+)
+
+logger = logging.getLogger(__name__)
 
 
 class Generator:
-    """Handles LLM answer generation."""
+    """Handles LLM answer generation.
+
+    Uses Grok (xAI) when GROK_API_KEY is set in the environment,
+    otherwise falls back to a local Ollama instance.
+    """
 
     def __init__(self, model: str = OLLAMA_MODEL, base_url: str = OLLAMA_BASE_URL):
         self.model = model
         self.base_url = base_url
+        self._use_grok = bool(GROK_API_KEY)
+        if self._use_grok:
+            logger.info("Generator using Grok (%s)", GROK_MODEL)
+        else:
+            logger.info("Generator using Ollama (%s @ %s)", model, base_url)
 
     def ask_llm(self, prompt: str) -> str:
-        """Send prompt to Ollama and get response."""
+        """Send a prompt to the configured LLM and return the response text.
+
+        Routes to Grok when GROK_API_KEY is present, otherwise Ollama.
+
+        Args:
+            prompt: The full prompt string to send.
+
+        Returns:
+            The model's response as a plain string.
+        """
+        if self._use_grok:
+            return self._ask_grok(prompt)
+        return self._ask_ollama(prompt)
+
+    def _ask_ollama(self, prompt: str) -> str:
+        """Send prompt to local Ollama instance.
+
+        Args:
+            prompt: The full prompt string.
+
+        Returns:
+            Response text from Ollama.
+        """
         response = requests.post(
             f'{self.base_url}/api/generate',
             json={
                 "model": self.model,
                 "prompt": prompt,
-                "stream": False
+                "stream": False,
             }
         )
         response.raise_for_status()
         return response.json()['response']
+
+    def _ask_grok(self, prompt: str) -> str:
+        """Send prompt to xAI Grok via the OpenAI-compatible chat completions API.
+
+        Args:
+            prompt: The full prompt string (sent as a user message).
+
+        Returns:
+            Response text from Grok.
+        """
+        response = requests.post(
+            f'{GROK_BASE_URL}/chat/completions',
+            headers={
+                'Authorization': f'Bearer {GROK_API_KEY}',
+                'Content-Type': 'application/json',
+            },
+            json={
+                "model": GROK_MODEL,
+                "messages": [{"role": "user", "content": prompt}],
+                "stream": False,
+            },
+            timeout=60,
+        )
+        response.raise_for_status()
+        return response.json()['choices'][0]['message']['content']
 
     def generate_without_rag(self, question: str) -> str:
         """Generate answer without RAG."""

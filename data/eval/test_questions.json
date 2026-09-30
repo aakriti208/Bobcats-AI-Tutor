@@ -1,0 +1,38 @@
+[
+  {
+    "question": "What is this course about?",
+    "reference_answer": null,
+    "note": "No reference — tests context_relevance, faithfulness, answer_relevance only"
+  },
+  {
+    "question": "What topics are covered in this course?",
+    "reference_answer": null
+  },
+  {
+    "question": "What are the late submission policies?",
+    "reference_answer": null
+  },
+  {
+    "question": "How is the final grade calculated?",
+    "reference_answer": null
+  },
+  {
+    "question": "What assignments are due this week?",
+    "reference_answer": null
+  },
+  {
+    "question": "REPLACE THIS: What is the due date for the first assignment?",
+    "reference_answer": "REPLACE THIS: The first assignment is due on [actual date from your course].",
+    "note": "Fill in with real course data to enable context_recall and context_precision"
+  },
+  {
+    "question": "REPLACE THIS: Who is the course instructor?",
+    "reference_answer": "REPLACE THIS: The instructor is [name], reachable at [email].",
+    "note": "Fill in with real course data to enable context_recall and context_precision"
+  },
+  {
+    "question": "REPLACE THIS: What will be covered on [a specific date from your syllabus]?",
+    "reference_answer": "REPLACE THIS: On [date] the topic is [topic from your schedule].",
+    "note": "Good test for the date-keyword boosting logic in the retriever"
+  }
+]
