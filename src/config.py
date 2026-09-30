@@ -35,10 +35,10 @@ CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "25"))
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma:2b")
 
-# LLM settings — Grok / xAI (cloud, used when GROK_API_KEY is set)
-GROK_API_KEY = os.getenv("GROK_API_KEY", "")
-GROK_BASE_URL = os.getenv("GROK_BASE_URL", "https://api.x.ai/v1")
-GROK_MODEL = os.getenv("GROK_MODEL", "grok-3-fast-beta")
+# LLM settings — Anthropic Claude (cloud, used when ANTHROPIC_API_KEY is set)
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-6")
+ANTHROPIC_MAX_TOKENS = int(os.getenv("ANTHROPIC_MAX_TOKENS", "1024"))
 
 # Retrieval settings
 TOP_K_RESULTS = int(os.getenv("TOP_K_RESULTS", "5"))  # Increased from 3 to retrieve more context

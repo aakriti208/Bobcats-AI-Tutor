@@ -1,0 +1,403 @@
+{
+  "evaluated_at": "2026-09-29T18:17:33.311372",
+  "questions_file": "data/eval/test_questions.json",
+  "knowledge_base_documents": 775,
+  "top_k": 5,
+  "num_questions": 8,
+  "summary": {
+    "context_relevance": {
+      "mean": 0.4392,
+      "min": 0.3019,
+      "max": 0.6782,
+      "n": 8,
+      "coverage": "8/8 questions"
+    },
+    "context_recall": {
+      "mean": 0.5,
+      "min": 0.0,
+      "max": 1.0,
+      "n": 3,
+      "coverage": "3/8 questions"
+    },
+    "context_precision": {
+      "mean": 0.5833,
+      "min": 0.0,
+      "max": 1.0,
+      "n": 3,
+      "coverage": "3/8 questions"
+    },
+    "faithfulness": {
+      "mean": 0.8675,
+      "min": 0.15,
+      "max": 1.0,
+      "n": 8,
+      "coverage": "8/8 questions"
+    },
+    "answer_relevance": {
+      "mean": 0.5601,
+      "min": 0.4353,
+      "max": 0.766,
+      "n": 8,
+      "coverage": "8/8 questions"
+    }
+  },
+  "results": [
+    {
+      "question": "What is this course about?",
+      "has_reference": false,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.437,
+        "num_chunks": 5,
+        "similarities": [
+          0.4458,
+          0.4458,
+          0.4318,
+          0.4318,
+          0.4297
+        ]
+      },
+      "context_recall": {
+        "score": null,
+        "note": "No reference answer provided"
+      },
+      "context_precision": {
+        "score": null,
+        "note": "No reference answer provided"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. This is CS 1428 - Foundations of Computer Science I Lab \u2192 SUPPORTED\n2. The course is at Texas State University (TXST) \u2192 SUPPORTED\n3. This is the laboratory component of the introductory programming course for computer science majors and minors \u2192 SUPPORTED\n4. It provides hands-on, practical application of topics taught in the CS 1428 lecture course \u2192 SUPPORTED\n5. The course uses a C++ source code editor and compiler \u2192 SUPPORTED\n6. Students will practice writing and running C++ programs \u2192 SUPPORTED\n7. Students will analyze data storage types \u2192 SUPPORTED\n8. Students will identify and correct program logic errors \u2192 SUPPORTED\n9. Students will practice various non-programming computer science topics \u2192 SUPPORTED\n10. Each lab consists of 3 components \u2192 SUPPORTED\n11. PreLab is worth 30 points \u2192 SUPPORTED\n12. PreLab is due 1 hour before the lab session \u2192 SUPPORTED\n13. Lab Assessment is worth 20 points \u2192 SUPPORTED\n14. Lab Assessment is completed and due during lab \u2192 SUPPORTED\n15. Programming Assignment is worth 50 points \u2192 SUPPORTED\n16. Programming Assignment is completed and due during lab \u2192 SUPPORTED\n17. There are 11 labs total \u2192 SUPPORTED\n18. The lowest lab grade will be dropped at the end of the semester \u2192 SUPPORTED\n19. This is a face-to-face course \u2192 SUPPORTED\n20. Labs are also offered via Zoom \u2192 SUPPORTED\n21. The lab instructor is Swarna Chakraborty \u2192 SUPPORTED\n22. All course materials can be found on Canvas \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 1.0"
+      },
+      "answer_relevance": {
+        "score": 0.6299,
+        "reverse_questions": [
+          "What is this course about?",
+          "How is CS 1428 Lab structured and graded?",
+          "What topics will I learn in CS 1428 Lab at Texas State University?"
+        ],
+        "similarities": [
+          1.0,
+          0.4187,
+          0.471
+        ]
+      },
+      "generated_answer": "## About This Course\n\nBased on your course materials, this is **CS 1428 - Foundations of Computer Science I Lab** at Texas State University (TXST).\n\nHere's a quick overview of what this course is about:\n\n### \ud83d\udda5\ufe0f Course Purpose\nThis is the **laboratory component** of the introductory programming course for computer science majors and minors. It provides **hands-on, practical application** of the topics taught in the CS 1428 lecture course, using a **C++ source code editor and compiler**.\n\n### \ud83d\udcda What You'll Practice\n- Writing and running **C++ programs**\n- Analyzing **data storage types**\n- Identifying and correcting **program logic errors**\n- Various other non-programming computer science topics\n\n### \ud83d\udcdd How the Course is Structured\nEach lab consists of **3 components**:\n- **PreLab** (30 points) \u2013 Due 1 hour before your lab session\n- **Lab Assessment** (20 points) \u2013 Completed and due during lab\n- **Programming Assignment** (50 points) \u2013 Completed and due during lab\n\nThere are **11 labs total**, and your **lowest lab grade will be dropped** at the end of the semester.\n\n### \ud83d\udccd Format\nThis is a **face-to-face course**, with labs also offered via **Zoom**.\n\nYour lab instructor is **Swarna Chakraborty**, and all course materials can be found on **Canvas**! \ud83d\ude0a"
+    },
+    {
+      "question": "What topics are covered in this course?",
+      "has_reference": false,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.4498,
+        "num_chunks": 5,
+        "similarities": [
+          0.4662,
+          0.4662,
+          0.4459,
+          0.4459,
+          0.4246
+        ]
+      },
+      "context_recall": {
+        "score": null,
+        "note": "No reference answer provided"
+      },
+      "context_precision": {
+        "score": null,
+        "note": "No reference answer provided"
+      },
+      "faithfulness": {
+        "score": 0.97,
+        "llm_response": "CLAIMS:\n1. The course is CS 1428 - Foundations of Computer Science I Lab \u2192 SUPPORTED\n2. Lab sessions cover multiple-choice, fill-in-the-blank, and free-response questions focused on lab topics \u2192 SUPPORTED\n3. There are multi-part programming assignments that explore lab topics in greater depth \u2192 SUPPORTED\n4. Module B1 covers \"Text as Data\" including how text is represented \u2192 SUPPORTED\n5. Module B1 covers Text Pre-processing including stopwords, stemming, and HTML tags \u2192 SUPPORTED\n6. Module B1 covers From Text to Tokens including tokens, N-grams, and document-feature matrices \u2192 SUPPORTED\n7. Module B1 covers Classification including sentiment classification, Na\u00efve Bayes algorithm, and application to IMDB movie reviews \u2192 SUPPORTED\n8. A detailed course schedule is available on the Canvas homepage at the bottom of the page \u2192 SUPPORTED\n9. The course schedule is continuously updated throughout the semester \u2192 SUPPORTED\n10. Pre-lab assignments are designed to familiarize students with upcoming lab concepts \u2192 SUPPORTED\n11. All course materials and announcements are posted on Canvas \u2192 SUPPORTED\n12. Pre-lab assignments are available on Canvas 48 hours before the first lab on Monday \u2192 SUPPORTED\n13. Module B1 is described as having quizzes that must be passed with at least 70% \u2192 SUPPORTED\n14. The course is associated with Texas A&M University \u2192 SUPPORTED (implied by source 5 mentioning \"A&M University\")\n\nFAITHFULNESS_SCORE: 0.97"
+      },
+      "answer_relevance": {
+        "score": 0.4433,
+        "reverse_questions": [
+          "What topics are covered in CS 1428 Lab?",
+          "What is Module B1 about in CS 1428?",
+          "Where can I find the full schedule and course materials for CS 1428 Lab?"
+        ],
+        "similarities": [
+          0.6292,
+          0.2627,
+          0.438
+        ]
+      },
+      "generated_answer": "# Topics Covered in CS 1428 Lab\n\nBased on your course materials, here's what's covered in this course:\n\n## CS 1428 - Foundations of Computer Science I Lab\n\nThe course is structured around several key components:\n\n### \ud83d\udcda Core Lab Topics\nThe lab sessions cover a variety of topics through:\n- **Multiple-choice, fill-in-the-blank, and free-response questions** focused on lab-specific topics\n- **Multi-part programming assignments** that explore lab topics in greater depth\n\n### \ud83d\udd2c Module B1 Topics (Text & Data Analysis)\nOne specific module covers:\n1. **Text as Data** \u2013 Understanding how text is represented\n2. **Text Pre-processing** \u2013 Including stopwords, stemming, and HTML tags\n3. **From Text to Tokens** \u2013 Tokens, N-grams, and document-feature matrices\n4. **Classification** \u2013 Sentiment classification, Na\u00efve Bayes algorithm, and application to IMDB movie reviews\n\n---\n\n### \ud83d\udca1 A Few Things to Note:\n- A **detailed course schedule** is available on the **Canvas homepage** (bottom of the page), which is continuously updated throughout the semester\n- **Pre-lab assignments** are designed to familiarize you with upcoming lab concepts before each session\n- All course materials and announcements are posted on **Canvas**, so be sure to check it regularly!\n\nFor the most complete and up-to-date list of topics, I'd recommend reviewing the full course schedule on Canvas. \ud83d\udcd6"
+    },
+    {
+      "question": "What are the late submission policies?",
+      "has_reference": false,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.337,
+        "num_chunks": 5,
+        "similarities": [
+          0.3682,
+          0.3682,
+          0.3242,
+          0.3242,
+          0.3003
+        ]
+      },
+      "context_recall": {
+        "score": null,
+        "note": "No reference answer provided"
+      },
+      "context_precision": {
+        "score": null,
+        "note": "No reference answer provided"
+      },
+      "faithfulness": {
+        "score": 0.93,
+        "llm_response": "CLAIMS:\n1. Pre-Lab or Lab assignments submitted after the deadline but within the late submission deadline receive a 10-point penalty \u2192 SUPPORTED\n2. The 10-point penalty applies to each assignment submitted late \u2192 SUPPORTED\n3. Programs that fail to compile or don't run correctly receive a grade of zero \u2192 SUPPORTED\n4. Students should thoroughly test their code before submitting \u2192 SUPPORTED\n5. Late submissions are only accepted within a specified late submission window \u2192 SUPPORTED\n6. The lab schedule contains specific deadlines and late submission windows \u2192 SUPPORTED\n7. Late submission windows can vary by assignment \u2192 NOT SUPPORTED\n\nFAITHFULNESS_SCORE: 0.93"
+      },
+      "answer_relevance": {
+        "score": 0.445,
+        "reverse_questions": [
+          "What is the late submission policy for CS 1428 Lab assignments?",
+          "How many points will I lose if I submit my Pre-Lab or Lab assignment after the deadline?",
+          "What happens if my program doesn't compile when I submit it for CS 1428?"
+        ],
+        "similarities": [
+          0.7194,
+          0.3134,
+          0.3022
+        ]
+      },
+      "generated_answer": "## Late Submission Policy for CS 1428 Lab\n\nBased on your course materials, here's what you need to know about late submissions:\n\n- **Late Penalty:** If a **Pre-Lab or Lab assignment** is submitted **after the deadline** but **within the late submission deadline**, you will receive a **10-point penalty** for each assignment submitted late.\n\n- **Non-Compiling Programs:** Keep in mind that if your program **fails to compile or doesn't run correctly**, it will receive a **grade of zero** \u2014 so make sure to thoroughly test your code before submitting!\n\n### Key Takeaways:\n\u2705 You *can* submit late, but only within the specified late submission window\n\u26a0\ufe0f Submitting late = **-10 points**\n\u274c Submitting a non-functioning program = **0 points**\n\n> \ud83d\udca1 **Tip:** Check your **lab schedule** for the specific deadlines and late submission windows, as they can vary by assignment!"
+    },
+    {
+      "question": "How is the final grade calculated?",
+      "has_reference": false,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.5016,
+        "num_chunks": 5,
+        "similarities": [
+          0.6005,
+          0.6005,
+          0.4466,
+          0.4466,
+          0.414
+        ]
+      },
+      "context_recall": {
+        "score": null,
+        "note": "No reference answer provided"
+      },
+      "context_precision": {
+        "score": null,
+        "note": "No reference answer provided"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. Each lab has 3 components \u2192 SUPPORTED\n2. Pre-Lab is worth 30 points \u2192 SUPPORTED\n3. Lab Assessment (Written) is worth 20 points \u2192 SUPPORTED\n4. Programming Assignment is worth 50 points \u2192 SUPPORTED\n5. Components combine for a total of 100 points per lab \u2192 SUPPORTED\n6. There are 11 labs total throughout the semester \u2192 SUPPORTED\n7. The lowest lab grade is dropped \u2192 SUPPORTED\n8. The average is computed from the remaining 10 scores \u2192 SUPPORTED\n9. Pre-Lab is due 1 hour before your lab session \u2192 SUPPORTED\n10. Lab Assessment and Programming Assignment are due by the end of the lab period \u2192 SUPPORTED\n11. Late submissions accepted until 10pm on the day of your lab \u2192 SUPPORTED\n12. Late submissions incur a 10-point deduction \u2192 SUPPORTED\n13. Lab grade is reported to the faculty instructor \u2192 SUPPORTED\n14. The faculty instructor determines the overall course grade \u2192 SUPPORTED\n15. The lab component accounts for some percentage of your overall grade \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 1.0"
+      },
+      "answer_relevance": {
+        "score": 0.5168,
+        "reverse_questions": [
+          "How is my lab grade calculated in CS 1428?",
+          "What are the point breakdowns for each lab component and when are they due?",
+          "How many labs are there in the semester and does the lowest grade get dropped?"
+        ],
+        "similarities": [
+          0.7353,
+          0.2945,
+          0.5205
+        ]
+      },
+      "generated_answer": "## Final Grade Calculation for CS 1428 Lab\n\nBased on your course materials, here's how your **lab grade** is calculated:\n\nEach lab has **3 components** that combine for a total of **100 points per lab**:\n\n| Component | Points |\n|---|---|\n| Pre-Lab | 30 points |\n| Lab Assessment (Written) | 20 points |\n| Programming Assignment | 50 points |\n\n### Overall Lab Grade Process:\n1. There are **11 labs** total throughout the semester\n2. Your **lowest lab grade is dropped**\n3. The average is then computed from the **remaining 10 scores**\n\n### Important Deadline Notes:\n- **Pre-Lab** is due **1 hour before** your lab session\n- **Lab Assessment and Programming Assignment** are due by the **end of the lab period**, or by **10pm on the day of your lab** (with a **10-point deduction** for late submissions up to that point)\n\n### \u26a0\ufe0f One Important Note:\nYour lab grade is reported to your **faculty instructor**, who determines your **overall course grade**. The Canvas materials indicate that the lab component accounts for *some percentage* of your overall grade \u2014 so be sure to **check with your course instructor** to find out exactly how much the lab counts toward your final course grade!"
+    },
+    {
+      "question": "What assignments are due this week?",
+      "has_reference": false,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.4865,
+        "num_chunks": 5,
+        "similarities": [
+          0.5173,
+          0.5173,
+          0.4695,
+          0.4695,
+          0.459
+        ]
+      },
+      "context_recall": {
+        "score": null,
+        "note": "No reference answer provided"
+      },
+      "context_precision": {
+        "score": null,
+        "note": "No reference answer provided"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. CS 1428 Lab has a Pre-Lab worth 30 points \u2192 SUPPORTED\n2. Pre-Lab is due 1 hour before the lab session \u2192 SUPPORTED\n3. Pre-Lab opens about 48 hours before Monday of each week \u2192 SUPPORTED\n4. Pre-Lab is usually a programming assignment to prepare for lab concepts \u2192 SUPPORTED\n5. Lab Assessment is worth 20 points \u2192 SUPPORTED\n6. Lab Assessment is due by the end of the lab period \u2192 SUPPORTED\n7. Lab Assessment includes multiple-choice, fill-in-the-blank, and free-response questions \u2192 SUPPORTED\n8. Programming Assignment is worth 50 points \u2192 SUPPORTED\n9. Programming Assignment is due by the end of the lab period \u2192 SUPPORTED\n10. Programming Assignment is a multi-part assignment covering lab topics in greater depth \u2192 SUPPORTED\n11. Programming Assignment is completed during the lab session \u2192 SUPPORTED\n12. All course materials and announcements are posted on Canvas \u2192 SUPPORTED\n13. A detailed course schedule is on the Canvas homepage \u2192 SUPPORTED\n14. The course schedule is regularly updated \u2192 SUPPORTED\n15. The lab instructor is Swarna Chakraborty \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 1.0"
+      },
+      "answer_relevance": {
+        "score": 0.5687,
+        "reverse_questions": [
+          "What assignments do I have due this week for CS 1428 Lab?",
+          "How many points is the programming assignment worth and when is it due?",
+          "Who is my lab instructor and where can I find my course assignments?"
+        ],
+        "similarities": [
+          0.7756,
+          0.5161,
+          0.4145
+        ]
+      },
+      "generated_answer": "## Assignments Due This Week\n\nBased on your course materials for **CS 1428 Lab**, each week typically has the following assignments:\n\n### \ud83d\udcdd Pre-Lab (30 points)\n- **Due: 1 hour before your lab session**\n- Opens about 48 hours before Monday of each week\n- Usually a programming assignment to prepare you for the lab concepts\n\n### \ud83d\udccb Lab Assessment (20 points)\n- **Due: By the end of your lab period**\n- Completed during the lab session\n- Includes multiple-choice, fill-in-the-blank, and free-response questions\n\n### \ud83d\udcbb Programming Assignment (50 points)\n- **Due: By the end of your lab period**\n- A multi-part programming assignment covering lab topics in greater depth\n- Also completed during the lab session\n\n---\n\n\u26a0\ufe0f **For the specific assignments due *this* week**, I'd recommend:\n- Checking **Canvas** directly, as all course materials and announcements are posted there\n- Looking at the **detailed course schedule** on the Canvas homepage, which is regularly updated\n\nYour lab instructor is **Swarna Chakraborty**, so feel free to reach out to them if you have any questions about specific deadlines! \ud83d\ude0a"
+    },
+    {
+      "question": "What is Tokenization according to Dr. Emmanuel Alan\u00eds?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.3218,
+        "num_chunks": 5,
+        "similarities": [
+          0.4393,
+          0.3059,
+          0.2905,
+          0.2887,
+          0.2846
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. Tokenization involves splitting text documents into smaller components called tokens \u2192 SUPPORTED\n2. Tokens can be single words \u2192 SUPPORTED\n3. Tokens can be pairs \u2192 SUPPORTED\n4. Tokens can be sentences \u2192 SUPPORTED\n5. Tokens can be lines \u2192 SUPPORTED\n6. Tokens can be paragraphs \u2192 SUPPORTED\n7. Tokenization is simple but powerful (and quick) \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 0.75,
+        "chunk_relevances": [
+          true,
+          false,
+          false,
+          true,
+          false
+        ],
+        "llm_response": "CHUNK 1: YES\nCHUNK 2: NO\nCHUNK 3: NO\nCHUNK 4: YES\nCHUNK 5: NO\nPRECISION_SCORE: 0.67"
+      },
+      "faithfulness": {
+        "score": 0.94,
+        "llm_response": "CLAIMS:\n1. Tokenization is the process of splitting text documents into smaller components called tokens \u2192 SUPPORTED\n2. Tokens can be single words \u2192 SUPPORTED\n3. Tokens can be pairs of words \u2192 SUPPORTED\n4. Tokens can be sentences \u2192 SUPPORTED\n5. Tokens can be lines \u2192 SUPPORTED\n6. Tokens can be paragraphs \u2192 SUPPORTED\n7. Tokenization is simple but powerful and quick \u2192 SUPPORTED\n8. Tokens can be transformed into a numerical array \u2192 SUPPORTED\n9. The simplest form of numerical representation is the bag of words model \u2192 SUPPORTED\n10. The baseline idea is that words are drawn at random from a bag \u2192 SUPPORTED\n11. If certain words appear more frequently, they are considered more important \u2192 SUPPORTED\n12. Tokenization loses most of the context of words \u2192 SUPPORTED\n13. \"I am Sam\" = \"Sam I am\" = \"am I Sam\" are treated as identical under bag-of-words \u2192 SUPPORTED\n14. CountVectorizer() from sklearn is used to tokenize text \u2192 SUPPORTED\n15. CountVectorizer() removes punctuation \u2192 SUPPORTED\n16. CountVectorizer() converts all words to lowercase \u2192 SUPPORTED\n17. CountVectorizer() counts word frequencies into a Document-Feature Matrix (DFM) \u2192 SUPPORTED\n18. Tokenization is the first critical step in turning raw text into structured, analyzable data \u2192 NOT SUPPORTED\n\nFAITHFULNESS_SCORE: 0.94"
+      },
+      "answer_relevance": {
+        "score": 0.4353,
+        "reverse_questions": [
+          "What is tokenization and how does it work in text analysis?",
+          "What are the limitations of the bag of words model in tokenization?",
+          "How do you tokenize text in Python using sklearn?"
+        ],
+        "similarities": [
+          0.6047,
+          0.4001,
+          0.301
+        ]
+      },
+      "generated_answer": "## Tokenization According to Dr. Emmanuel Alan\u00eds\n\nAccording to Dr. Alan\u00eds, **tokenization** is the process of splitting text documents into smaller components called **tokens**.\n\nThese tokens can take various forms, including:\n- Single words\n- Pairs of words\n- Sentences\n- Lines\n- Paragraphs\n\n### Key Characteristics:\n\n- **Simple but powerful** \u2013 Tokenization is both quick and effective as a foundational step in text analysis.\n- **Converts text to numbers** \u2013 Tokens can be transformed into a numerical array. The simplest form of this is the **bag of words** model.\n- **Frequency matters** \u2013 The baseline idea is that words are drawn at random from a \"bag,\" so if certain words appear more frequently, they are considered more important.\n- **Context is lost** \u2013 One important limitation is that tokenization loses most of the context of words. For example:\n  - *\"I am Sam\"* = *\"Sam I am\"* = *\"am I Sam\"*\n\n  All three phrases would be treated as identical under a basic bag-of-words approach.\n\n### Practical Application:\nIn Python, the **`CountVectorizer()`** function from the `sklearn` package is commonly used to tokenize text. It automatically:\n- Tokenizes the text\n- Removes punctuation\n- Converts all words to lowercase\n- Counts word frequencies into a **Document-Feature Matrix (DFM)**\n\nIn short, tokenization is the **first critical step** in turning raw text into structured, analyzable data! \ud83d\udcdd"
+    },
+    {
+      "question": "what does Missing ProctorIO logs do?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.3019,
+        "num_chunks": 5,
+        "similarities": [
+          0.3066,
+          0.3066,
+          0.3008,
+          0.3008,
+          0.2946
+        ]
+      },
+      "context_recall": {
+        "score": 0.0,
+        "llm_response": "CLAIMS:\n1. Missing ProctorIO logs results in disqualification \u2192 NOT SUPPORTED\n\nRECALL_SCORE: 0.0"
+      },
+      "context_precision": {
+        "score": 0.0,
+        "chunk_relevances": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "llm_response": "CHUNK 1: NO\nCHUNK 2: NO\nCHUNK 3: NO\nCHUNK 4: NO\nCHUNK 5: NO\nPRECISION_SCORE: 0.0"
+      },
+      "faithfulness": {
+        "score": 0.15,
+        "llm_response": "CLAIMS:\n1. ProctorU is an online proctoring service \u2192 NOT SUPPORTED\n2. ProctorU monitors and records student activity during remote exams \u2192 NOT SUPPORTED\n3. ProctorU records webcam footage \u2192 NOT SUPPORTED\n4. ProctorU tracks keystrokes \u2192 NOT SUPPORTED\n5. ProctorU records screen activity \u2192 NOT SUPPORTED\n6. ProctorU logs serve as an audit trail to verify students followed exam rules \u2192 NOT SUPPORTED\n7. Missing ProctorU logs mean there is no verifiable record of what occurred during an exam session \u2192 NOT SUPPORTED\n8. Missing logs make it difficult to investigate suspicious behavior \u2192 NOT SUPPORTED\n9. Missing logs create challenges in resolving disputes about exam conditions \u2192 NOT SUPPORTED\n10. Missing logs leave a gap in exam security verification \u2192 NOT SUPPORTED\n11. Programs must compile and run to be eligible for grading \u2192 SUPPORTED\n12. Non-functioning programs receive a grade of zero \u2192 SUPPORTED\n13. ProctorU is not mentioned in the lab materials \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 0.15"
+      },
+      "answer_relevance": {
+        "score": 0.6762,
+        "reverse_questions": [
+          "What are ProctorU logs and why are they important for exam security?",
+          "What happens if my ProctorU logs are missing from my exam session?",
+          "Does CS 1428 use ProctorU for exam monitoring, and what does it track?"
+        ],
+        "similarities": [
+          0.7476,
+          0.7582,
+          0.5229
+        ]
+      },
+      "generated_answer": "## Missing ProctorU Logs\n\nThe Canvas course materials don't specifically cover ProctorU logs, but here's what you should know:\n\n**ProctorU** is an online proctoring service that monitors and records student activity during remote exams, including:\n- \ud83d\udcf9 Webcam footage\n- \u2328\ufe0f Keystroke tracking\n- \ud83d\udda5\ufe0f Screen activity recording\n\nThese logs serve as the **audit trail** to verify that students followed exam rules and to investigate any potential academic integrity concerns.\n\n### When Logs Are Missing...\nMissing ProctorU logs mean there is **no verifiable record** of what occurred during an exam session, which can:\n- Make it difficult to **investigate suspicious behavior**\n- Create challenges in **resolving disputes** about exam conditions\n- Leave a **gap in exam security** verification\n\n---\n\n### \ud83d\udccc Relevant to Your Course (CS 1428)\nWhile ProctorU isn't mentioned in your lab materials, your course does have important policies around **academic integrity and assignment submission**. Notably:\n- Programs must **compile and run** to be eligible for grading\n- Non-functioning programs receive a **grade of zero**\n\nIf you have a specific concern about ProctorU logs related to an exam, I'd recommend **reaching out directly to your instructor or the testing center** to resolve any issues with missing records."
+    },
+    {
+      "question": "Who is the lab instructor for CS1428 Lab?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.6782,
+        "num_chunks": 5,
+        "similarities": [
+          0.7027,
+          0.7027,
+          0.6953,
+          0.6822,
+          0.6083
+        ]
+      },
+      "context_recall": {
+        "score": 0.5,
+        "llm_response": "CLAIMS:\n1. Swarna Chakraborty is a lab instructor for CS1428 Lab \u2192 SUPPORTED\n2. Vaishnavi Sharma is a lab instructor for CS1428 Lab \u2192 NOT SUPPORTED (Vaishnavi Sharma is listed as a Lab Assistant, not a Lab Instructor, in Source 4)\n\nRECALL_SCORE: 0.5"
+      },
+      "context_precision": {
+        "score": 1.0,
+        "chunk_relevances": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "llm_response": "CHUNK 1: YES\nCHUNK 2: YES\nCHUNK 3: YES\nCHUNK 4: YES\nCHUNK 5: NO\n\nPRECISION_SCORE: 0.8"
+      },
+      "faithfulness": {
+        "score": 0.95,
+        "llm_response": "CLAIMS:\n1. The lab instructor for CS 1428 Lab is Swarna Chakraborty \u2192 SUPPORTED\n2. Swarna Chakraborty's email is wnp23@txstate.edu \u2192 SUPPORTED\n3. Students should allow several hours for a response \u2192 SUPPORTED\n4. She does not typically respond over weekends, holidays, or at night \u2192 SUPPORTED\n5. There is a Lab Assistant available to help \u2192 SUPPORTED\n6. One lab assistant is Aakriti Dhakal with email a_d840@txstate.edu \u2192 SUPPORTED\n7. Another lab assistant is Vaishnavi Sharma with email fpd16@txstate.edu \u2192 SUPPORTED\n8. The lab assistant availability depends on the specific lab section \u2192 NOT SUPPORTED\n\nFAITHFULNESS_SCORE: 0.95"
+      },
+      "answer_relevance": {
+        "score": 0.766,
+        "reverse_questions": [
+          "Who is the lab instructor for CS 1428 and how can I contact them?",
+          "What is the email address for the CS 1428 lab instructor?",
+          "Who should I contact if I need help with my CS 1428 lab section?"
+        ],
+        "similarities": [
+          0.8288,
+          0.7838,
+          0.6853
+        ]
+      },
+      "generated_answer": "Based on your course materials, the lab instructor for CS 1428 Lab is **Swarna Chakraborty**. You can reach her via email at **wnp23@txstate.edu**.\n\nJust keep in mind that you should allow several hours for a response, and she does not typically respond over **weekends, holidays, or at night**. \ud83d\ude0a\n\nThere is also a **Lab Assistant** available to help \u2014 either **Aakriti Dhakal** (a_d840@txstate.edu) or **Vaishnavi Sharma** (fpd16@txstate.edu), depending on your specific lab section."
+    }
+  ]
+}

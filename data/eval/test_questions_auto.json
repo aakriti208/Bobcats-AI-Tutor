@@ -1,0 +1,121 @@
+[
+  {
+    "question": "If a user enters n=5, what numbers will the for loop print and in what format?",
+    "reference_answer": "If n=5, the for loop will print the numbers 1, 2, 3, 4, and 5, each on a separate new line. This is achieved by initializing i to 0 and printing i+1 in each iteration until i reaches n.",
+    "source_title": "Untitled",
+    "source_content_type": "file",
+    "source_course": "CS1428 Lab"
+  },
+  {
+    "question": "When is the Prelab 2 assignment due?",
+    "reference_answer": "Prelab 2 is due one hour before the start of your lab session.",
+    "source_title": "Prelab 2",
+    "source_content_type": "assignment",
+    "source_course": "CS1428 Lab"
+  },
+  {
+    "question": "How many points will I lose if my code doesn't compile?",
+    "reference_answer": "If your code does not compile, you will lose 30 points, which is the full point value of the assignment.",
+    "source_title": "Untitled",
+    "source_content_type": "file",
+    "source_course": "CS1428 Lab"
+  },
+  {
+    "question": "Why does modifying array element 0 inside `array_func` also change its value back in `main`?",
+    "reference_answer": "Because arrays are passed to functions by reference (via a pointer to the first element), not by value. So when `array_func` does `A[0] += 5`, it modifies the actual array in memory, which is why `main` sees the updated value when it prints element 0 after the function call.",
+    "source_title": "Untitled",
+    "source_content_type": "file",
+    "source_course": "CS1428 Lab"
+  },
+  {
+    "question": "When is the Pre-Lab 5 assignment due?",
+    "reference_answer": "The Pre-Lab 5 assignment is due one hour before the start of your lab.",
+    "source_title": "Prelab 6",
+    "source_content_type": "assignment",
+    "source_course": "CS1428 Lab"
+  },
+  {
+    "question": "When is the Pre-Lab 1 assignment due?",
+    "reference_answer": "The Pre-Lab 1 assignment is due one hour before the start of your lab session.",
+    "source_title": "Prelab 1",
+    "source_content_type": "assignment",
+    "source_course": "CS1428 Lab"
+  },
+  {
+    "question": "What machine learning algorithm is used for the sentiment classification application in this course?",
+    "reference_answer": "The course uses the Na\u00efve Bayes algorithm for the hands-on sentiment classification application.",
+    "source_title": "Start Here",
+    "source_content_type": "page",
+    "source_course": "B1. Introduction to Natural Language Processing"
+  },
+  {
+    "question": "Will lab be held during the first week of class?",
+    "reference_answer": "No, lab will not be held during the first week of class. Students are expected to attend starting in the second week.",
+    "source_title": "CS 1428 Lab - Welcome and Schedule Update",
+    "source_content_type": "announcement",
+    "source_course": "CS1428 Lab"
+  },
+  {
+    "question": "What score do I need to get on the quizzes to pass this module?",
+    "reference_answer": "You need to complete both quizzes with a score of 70% or better to successfully pass the module. There are two quizzes: one on tokens and n-grams, and one on classification.",
+    "source_title": "B1. Introduction to Natural Language Processing - Syllabus",
+    "source_content_type": "syllabus",
+    "source_course": "B1. Introduction to Natural Language Processing"
+  },
+  {
+    "question": "How many points out of the lab assignment are allocated to style guidelines?",
+    "reference_answer": "5 points out of the 50 points for the Program portion of the lab are allocated to style guidelines.",
+    "source_title": "CS1428 Lab - Syllabus",
+    "source_content_type": "syllabus",
+    "source_course": "CS1428 Lab"
+  },
+  {
+    "question": "How many attempts do I get on Quiz #2, and how is my score recorded?",
+    "reference_answer": "You have 3 attempts to complete Quiz #2, and the highest score among your attempts is the one recorded. You must achieve a score of 70% or higher to finish the section.",
+    "source_title": "Lesson B1.3: Classification",
+    "source_content_type": "page",
+    "source_course": "B1. Introduction to Natural Language Processing"
+  },
+  {
+    "question": "What is the difference between the `=` and `==` operators in C++?",
+    "reference_answer": "In C++, `=` is the assignment operator, which assigns a value to a variable, while `==` is the comparison operator, which checks whether two values are equal. Confusing the two is described as a common mistake in the course material.",
+    "source_title": "Untitled",
+    "source_content_type": "file",
+    "source_course": "CS1428 Lab"
+  },
+  {
+    "question": "What is Dr. Alanis's academic background, and where did he receive his PhD?",
+    "reference_answer": "Dr. Alanis is an Associate Professor of Finance at the McCoy College of Business at Texas State University, with research interests in credit risk prediction, corporate debt, and machine learning. He received his PhD from Texas A&M University.",
+    "source_title": "Start Here",
+    "source_content_type": "page",
+    "source_course": "B1. Introduction to Natural Language Processing"
+  },
+  {
+    "question": "How many points out of the lab grade are dedicated to style guidelines?",
+    "reference_answer": "5 points out of the 50 points for the Program portion of the lab are allocated to style guidelines. These guidelines include having your name and netID in a comment at the top of the file, using descriptive variable names, keeping lines no longer than 80 characters, and consistently indenting nested blocks of code.",
+    "source_title": "CS1428 Lab - Syllabus",
+    "source_content_type": "syllabus",
+    "source_course": "CS1428 Lab"
+  },
+  {
+    "question": "Where can I find help if I have trouble setting up an IDE like CodeBlocks for the lab?",
+    "reference_answer": "Your instructor will be available on Zoom during lab hours to answer questions. You can also find instructions for setting up an IDE like CodeBlocks in the announcement listed under the \"Announcements\" menu on the left side of the course.",
+    "source_title": "Lab 5",
+    "source_content_type": "assignment",
+    "source_course": "CS1428 Lab"
+  },
+  {
+    "question": "How should I name a constant variable in C++, and can you give an example?",
+    "reference_answer": "Constants should be defined using `const`, and their names should be written in all capitals with underscores separating words. For example: `const double TAX_RATE = 0.0675;`",
+    "source_title": "C++ Programming Standards & Practices",
+    "source_content_type": "page",
+    "source_course": "CS1428 Lab"
+  },
+  {
+    "question": "Will lab be held during the first week of class?",
+    "reference_answer": "No, lab will not be held during the first week of class. Students should expect to attend starting in the second week.",
+    "source_title": "CS 1428 Lab - Welcome and Schedule Update",
+    "source_content_type": "announcement",
+    "source_course": "CS1428 Lab"
+  }
+]

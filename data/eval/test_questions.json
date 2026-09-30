@@ -21,18 +21,15 @@
     "reference_answer": null
   },
   {
-    "question": "REPLACE THIS: What is the due date for the first assignment?",
-    "reference_answer": "REPLACE THIS: The first assignment is due on [actual date from your course].",
-    "note": "Fill in with real course data to enable context_recall and context_precision"
+    "question": "What is Tokenization according to Dr. Emmanuel Alanís?",
+    "reference_answer": "We split text documents into smaller components called tokens• This can be single words, or pairs, or sentences, or lines, orparagraphs, or …• Simple but powerful (and quick)"
   },
   {
-    "question": "REPLACE THIS: Who is the course instructor?",
-    "reference_answer": "REPLACE THIS: The instructor is [name], reachable at [email].",
-    "note": "Fill in with real course data to enable context_recall and context_precision"
+    "question": "what does Missing ProctorIO logs do?",
+    "reference_answer": "Disqualification"
   },
   {
-    "question": "REPLACE THIS: What will be covered on [a specific date from your syllabus]?",
-    "reference_answer": "REPLACE THIS: On [date] the topic is [topic from your schedule].",
-    "note": "Good test for the date-keyword boosting logic in the retriever"
+    "question": "Who is the lab instructor for CS1428 Lab?",
+    "reference_answer": "The Lab instructors are: Swarna Chakraborty and Vaishnavi Sharma."
   }
 ]

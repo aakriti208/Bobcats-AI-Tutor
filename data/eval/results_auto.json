@@ -1,0 +1,922 @@
+{
+  "evaluated_at": "2026-09-30T12:33:25.352493",
+  "questions_file": "data/eval/test_questions_auto.json",
+  "knowledge_base_documents": 775,
+  "top_k": 5,
+  "num_questions": 18,
+  "summary": {
+    "context_relevance": {
+      "mean": 0.5663,
+      "min": 0.2666,
+      "max": 0.7139,
+      "n": 18,
+      "coverage": "18/18 questions"
+    },
+    "context_recall": {
+      "mean": 0.8794,
+      "min": 0.0,
+      "max": 1.0,
+      "n": 18,
+      "coverage": "18/18 questions"
+    },
+    "context_precision": {
+      "mean": 0.7884,
+      "min": 0.0,
+      "max": 1.0,
+      "n": 18,
+      "coverage": "18/18 questions"
+    },
+    "faithfulness": {
+      "mean": 0.8511,
+      "min": 0.1,
+      "max": 1.0,
+      "n": 18,
+      "coverage": "18/18 questions"
+    },
+    "answer_relevance": {
+      "mean": 0.6884,
+      "min": 0.4718,
+      "max": 0.8362,
+      "n": 18,
+      "coverage": "18/18 questions"
+    }
+  },
+  "results": [
+    {
+      "question": "If I enter n=5, what numbers will the for loop print and how are they displayed?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.651,
+        "num_chunks": 5,
+        "similarities": [
+          0.6691,
+          0.6691,
+          0.6582,
+          0.6582,
+          0.6002
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. If n=5, the for loop will print the numbers 1, 2, 3, 4, and 5 \u2192 SUPPORTED\n2. Each number is printed on a separate new line \u2192 SUPPORTED\n3. The loop is initialized with i starting at 0 \u2192 SUPPORTED\n4. The output prints i+1 during each iteration \u2192 SUPPORTED\n5. The loop runs 5 times \u2192 SUPPORTED\n6. The loop prints numbers 1 through 5 \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 1.0,
+        "chunk_relevances": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "llm_response": "CHUNK 1: YES\nCHUNK 2: YES\nCHUNK 3: YES\nCHUNK 4: YES\nCHUNK 5: NO\nPRECISION_SCORE: 0.8"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. When n=5, the for loop with `cout << i + 1 << endl` prints numbers on separate lines \u2192 SUPPORTED\n2. When n=5, the for loop with `cout << i + 1 << endl` outputs 1, 2, 3, 4, 5 each on its own line \u2192 SUPPORTED\n3. The `endl` causes each number to appear on its own line \u2192 SUPPORTED\n4. When n=5, the for loop with `cout << i + 1 << \" \"` prints all numbers on one line \u2192 SUPPORTED\n5. When n=5, the for loop with `cout << i + 1 << \" \"` outputs \"1 2 3 4 5\" on one line with spaces \u2192 SUPPORTED\n6. The loop condition is `i < n`, meaning i goes from 0 to 4 (5 iterations) \u2192 SUPPORTED\n7. Since the code prints `i + 1`, the displayed numbers are 1 through 5 \u2192 SUPPORTED\n8. The loop runs exactly n times (5 times in this case) \u2192 SUPPORTED\n9. Using `endl` vs a space `\" \"` controls how output is formatted and displayed \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 1.0"
+      },
+      "answer_relevance": {
+        "score": 0.6534,
+        "reverse_questions": [
+          "What is the output of the for loop when n=5?",
+          "What is the difference between using endl and a space in a cout statement inside a for loop?",
+          "How do I print the numbers 1 to 5 using a for loop in C++?"
+        ],
+        "similarities": [
+          0.8431,
+          0.4159,
+          0.7013
+        ]
+      },
+      "generated_answer": "## For Loop Output with n=5\n\nBased on your course materials, when you enter **n=5**, the for loop will behave differently depending on how the `cout` statement is written:\n\n---\n\n### Option 1: Numbers on Separate Lines\n```cpp\nfor (i = 0; i < n; i++)\n{\n    cout << i + 1 << endl;\n}\n```\n**Output:**\n```\n1\n2\n3\n4\n5\n```\nEach number appears on its **own line** because of `endl`.\n\n---\n\n### Option 2: Numbers on the Same Line\n```cpp\nfor (i = 0; i < n; i++)\n{\n    cout << i + 1 << \" \";\n}\n```\n**Output:**\n```\n1 2 3 4 5\n```\nAll numbers appear on **one line**, separated by spaces.\n\n---\n\n### Key Things to Notice:\n- The loop condition is `i < n`, meaning `i` goes from **0 to 4** (5 iterations)\n- But since the code prints `i + 1`, the **displayed numbers are 1 through 5**\n- The loop runs exactly **n times** (5 times in this case)\n\nThis is a great example of how adjusting the `cout` statement \u2014 specifically using `endl` vs. a space `\" \"` \u2014 controls how your output is **formatted and displayed**! \ud83d\ude0a"
+    },
+    {
+      "question": "When is the Prelab 2 assignment due?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.6216,
+        "num_chunks": 5,
+        "similarities": [
+          0.6559,
+          0.6158,
+          0.6158,
+          0.6104,
+          0.6104
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. Prelab 2 is due one hour before the start of your lab session \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 0.6792,
+        "chunk_relevances": [
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "llm_response": "CHUNK 1: NO\nCHUNK 2: YES\nCHUNK 3: YES\nCHUNK 4: YES\nCHUNK 5: YES\nPRECISION_SCORE: 0.8"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. Pre-Lab assignments are due 1 hour before your lab session begins \u2192 SUPPORTED\n2. Prelab 2 is due 1 hour before your scheduled lab class \u2192 SUPPORTED\n3. Pre-Lab assignments open about 48 hours before Monday of each week on Canvas \u2192 SUPPORTED\n4. Pre-Lab assignments are worth 30 points \u2192 SUPPORTED\n5. Prelab 2 has already been graded \u2192 SUPPORTED\n6. Students can reach out to their lab instructor with questions about Prelab 2 \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 1.0"
+      },
+      "answer_relevance": {
+        "score": 0.6317,
+        "reverse_questions": [
+          "When is Prelab 2 due?",
+          "How much time do I have before my lab session to submit the pre-lab assignment?",
+          "When do pre-lab assignments open on Canvas and how many points are they worth?"
+        ],
+        "similarities": [
+          0.8235,
+          0.5678,
+          0.5039
+        ]
+      },
+      "generated_answer": "Based on your course materials, **Pre-Lab assignments are due 1 hour before your lab session begins.**\n\nSo for Prelab 2 specifically, it would be due **1 hour before your scheduled lab class.**\n\nAlso worth noting:\n- Pre-Lab assignments **open about 48 hours before Monday** of each week on Canvas\n- They are worth **30 points**\n\nIf you're unsure of your exact lab time, check your personal class schedule, or feel free to reach out to your lab instructor directly \u2014 they also mentioned that Prelab 2 has already been graded, so if you have any questions about it, don't hesitate to contact them! \ud83d\ude0a"
+    },
+    {
+      "question": "How many points will I lose if my code doesn't compile?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.5463,
+        "num_chunks": 5,
+        "similarities": [
+          0.5973,
+          0.5973,
+          0.5209,
+          0.5209,
+          0.4951
+        ]
+      },
+      "context_recall": {
+        "score": 0.33,
+        "llm_response": "CLAIMS:\n1. If your code does not compile, you will lose points \u2192 SUPPORTED\n2. The penalty for code not compiling is 30 points \u2192 NOT SUPPORTED\n3. The 30-point penalty represents the full point value of the programming assignment \u2192 NOT SUPPORTED\n\nRECALL_SCORE: 0.33"
+      },
+      "context_precision": {
+        "score": 1.0,
+        "chunk_relevances": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "llm_response": "I need to evaluate each chunk for usefulness in answering \"How many points will I lose if my code doesn't compile?\"\n\nThe reference answer states: losing 30 points (full point value of programming assignment).\n\nHowever, all chunks mention \"Code does not compile -50 points\" which is relevant information about point deductions for non-compiling code, even though it differs from the reference answer. The chunks contain useful information for answering the question.\n\nCHUNK 1: YES\nCHUNK 2: YES\nCHUNK 3: YES\nCHUNK 4: YES\nCHUNK 5: YES\n\nNow I calculate precision score. All 5 chunks contain useful information about point deductions for non-compiling code.\n\nAverage precision: 5/5 = 1.0\n\nPRECISION_SCORE: 1.0"
+      },
+      "faithfulness": {
+        "score": 0.5,
+        "llm_response": "CLAIMS:\n1. Code not compiling results in a -50 point penalty \u2192 SUPPORTED\n2. Testing code locally before submitting helps avoid compilation issues \u2192 NOT SUPPORTED\n3. Checking for syntax errors (missing semicolons, brackets, etc.) helps avoid compilation issues \u2192 NOT SUPPORTED\n4. Submitting code that at least compiles even if incomplete is advisable \u2192 NOT SUPPORTED\n5. Submitting after the deadline carries an additional -10 point penalty \u2192 SUPPORTED\n6. Lab schedules contain specific deadline information \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 0.5"
+      },
+      "answer_relevance": {
+        "score": 0.6488,
+        "reverse_questions": [
+          "What happens if my code doesn't compile when I submit my assignment?",
+          "How many points will I lose if my code does not compile?",
+          "What are the penalties I should be aware of when submitting my lab?"
+        ],
+        "similarities": [
+          0.6459,
+          0.9977,
+          0.3029
+        ]
+      },
+      "generated_answer": "Based on your course materials, **your code not compiling will result in a -50 point penalty**. This is a significant deduction, so it's really important to make sure your code compiles before submitting!\n\nHere are a few tips to avoid this:\n- **Test your code** by running it locally before submitting\n- **Check for syntax errors** carefully (missing semicolons, brackets, etc.)\n- Even if your program isn't fully complete, try to submit code that at least **compiles without errors**\n\nAlso, keep in mind that submitting **after the deadline** carries an additional **-10 point penalty**, so try to submit on time as well. Check your lab schedule for the specific deadlines! \ud83d\udcc5"
+    },
+    {
+      "question": "Why does modifying array element `A[0]` inside `array_func` also change `my_arr[0]` in `main`?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.5353,
+        "num_chunks": 5,
+        "similarities": [
+          0.5559,
+          0.5559,
+          0.5358,
+          0.5358,
+          0.4934
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. When an array is passed to a function in C++, the function receives a pointer to the original array (its memory address) rather than a copy \u2192 SUPPORTED\n2. Any changes made to elements inside the function (like `A[0] += 5`) directly affect the original array in `main` \u2192 SUPPORTED\n3. Both \"In function (add 5), element 0\" and \"In main at bottom, element 0\" reflect the updated value \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 1.0,
+        "chunk_relevances": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "llm_response": "I'll evaluate each chunk for relevance to the question about why modifying `A[0]` inside `array_func` also changes `my_arr[0]` in `main`.\n\nCHUNK 1: YES\nCHUNK 2: YES\nCHUNK 3: YES\nCHUNK 4: YES\nCHUNK 5: YES\n\nPRECISION_SCORE: 1.0"
+      },
+      "faithfulness": {
+        "score": 0.95,
+        "llm_response": "CLAIMS:\n1. When you pass `my_arr` to `array_func`, you are passing the memory address of the array's first element, not a copy of the data \u2192 SUPPORTED\n2. The array name has the address of the first element stored inside it \u2192 SUPPORTED\n3. Passing an array as an argument to a function gives the function the array's address in memory \u2192 SUPPORTED\n4. `my_arr` is stored starting at memory address 1302 (in the example) \u2192 SUPPORTED\n5. `A[0]` inside `array_func` points to the same memory address as `my_arr[0]` in `main` \u2192 SUPPORTED\n6. When `array_func` does `A[0] += 5`, it writes directly to the original memory location \u2192 SUPPORTED\n7. `main` sees the change to `my_arr[0]` immediately after `array_func` modifies `A[0]` \u2192 SUPPORTED\n8. Passing a regular variable like an `int` gives the function a copy, and changes don't affect the original \u2192 NOT SUPPORTED\n9. Arrays in C++ are always passed by address \u2192 SUPPORTED\n10. Any modifications inside the function will affect the original array in `main` \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 0.95"
+      },
+      "answer_relevance": {
+        "score": 0.6363,
+        "reverse_questions": [
+          "Why does changing `A[0]` inside `array_func` also change `my_arr[0]` in `main`? I thought the function got its own copy of the data.",
+          "What happens to the original array when I pass it to a function \u2014 does the function make a copy of it or work with the same memory?",
+          "What is the difference between passing an `int` variable and passing an array to a function in C++?"
+        ],
+        "similarities": [
+          0.9275,
+          0.5225,
+          0.4588
+        ]
+      },
+      "generated_answer": "## Why Modifying `A[0]` Changes `my_arr[0]`\n\nGreat question! This behavior comes down to **how arrays are passed to functions in C++**.\n\nWhen you pass `my_arr` to `array_func`, you are not passing a copy of the array's data \u2014 you are actually passing the **memory address** of the array's first element. Your course materials explain this clearly:\n\n> *\"The array name will have the address of the first element stored inside of it. Therefore, passing the array as an argument to a function will actually be giving the function the array's address in memory.\"*\n\n---\n\n### Think of it this way:\n\nImagine `my_arr` is stored starting at memory address **1302**:\n\n```\nAddress:  1302   1303   1304   1305   1306\nValue:     10     20     30     40     50\nIndex:      0      1      2      3      4\n```\n\nWhen you call `array_func(my_arr, SIZE)`, the function receives **address 1302** \u2014 the exact same memory location. So inside `array_func`:\n\n- `A[0]` points to address **1302**\n- `my_arr[0]` in `main` also points to address **1302**\n\nThey are **the same location in memory!** So when `array_func` does `A[0] += 5`, it writes directly to address 1302, and `main` sees that change immediately.\n\n---\n\n### Key Takeaway\nThis is fundamentally different from passing a regular variable (like an `int`), where the function gets a **copy** and changes don't affect the original. Arrays, by their nature in C++, are always passed by **address**, meaning any modifications inside the function will affect the original array in `main`."
+    },
+    {
+      "question": "When is the Pre-Lab 5 assignment due?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.7139,
+        "num_chunks": 5,
+        "similarities": [
+          0.7539,
+          0.7539,
+          0.7051,
+          0.7051,
+          0.6517
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. The Pre-Lab 5 assignment is due one hour before the start of the lab session \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 1.0,
+        "chunk_relevances": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "llm_response": "CHUNK 1: YES\nCHUNK 2: YES\nCHUNK 3: YES\nCHUNK 4: YES\nCHUNK 5: NO\nPRECISION_SCORE: 0.8"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. Pre-Lab assignments are due 1 hour before your scheduled lab session \u2192 SUPPORTED\n2. The specific due date for Pre-Lab 5 isn't listed in the available materials \u2192 SUPPORTED\n3. Pre-Lab assignments are posted on Canvas \u2192 SUPPORTED\n4. Pre-Lab assignments open about 48 hours before Monday of the relevant week \u2192 SUPPORTED\n5. Swarna Chakraborty is a lab instructor who can be contacted \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 1.0"
+      },
+      "answer_relevance": {
+        "score": 0.7738,
+        "reverse_questions": [
+          "When is Pre-Lab 5 due?",
+          "How early before lab do I need to submit my pre-lab assignment?",
+          "When do pre-lab assignments open up on Canvas?"
+        ],
+        "similarities": [
+          0.8527,
+          0.7807,
+          0.6879
+        ]
+      },
+      "generated_answer": "Based on the course materials, Pre-Lab assignments are generally **due 1 hour before your scheduled lab session**.\n\nHowever, the specific due date for **Pre-Lab 5** isn't listed in the materials I have access to. Here's what I'd recommend to find the exact date:\n\n- **Check Canvas** directly, as Pre-Lab assignments are posted there and should show the specific due date\n- **Review your course syllabus** for the weekly schedule\n- **Ask your lab instructor** (you can reach out to Swarna Chakraborty) if you're still unsure\n\nAs a helpful reminder, Pre-Lab assignments typically **open about 48 hours before Monday of the relevant week**, so keep an eye out for it becoming available on Canvas! \ud83d\udcc5"
+    },
+    {
+      "question": "How much of my overall course grade does the lab component count for?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.6152,
+        "num_chunks": 5,
+        "similarities": [
+          0.6252,
+          0.6252,
+          0.6184,
+          0.6184,
+          0.5889
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. The text does not specify the exact weight of the lab component in the overall course grade \u2192 SUPPORTED\n2. You should check with your faculty instructor for overall course grading details \u2192 SUPPORTED\n3. You should check the course syllabus for overall course grading details \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 1.0,
+        "chunk_relevances": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "llm_response": "I'll evaluate each chunk for whether it contains information useful for answering the question about how much the lab component counts toward the overall course grade.\n\nThe reference answer states: the text does NOT specify the exact weight, and students should check with their instructor or syllabus.\n\nCHUNK 1: YES\nCHUNK 2: YES\nCHUNK 3: YES\nCHUNK 4: YES\nCHUNK 5: YES\n\nAll chunks contain relevant information because they either explicitly state that the overall course grade is calculated by the faculty instructor (without specifying the lab's weight), or directly state \"These labs account to some percentage of your overall course grade. (Check with your course Instructor)\" \u2014 all of which support the reference answer that the exact weight is not specified and students should check with their instructor.\n\nPRECISION_SCORE: 1.0"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. The exact percentage of the overall course grade that the lab component counts for is not explicitly stated in the syllabus. \u2192 SUPPORTED\n2. The materials state \"These labs account to some percentage of your overall course grade. Check with your course Instructor.\" \u2192 SUPPORTED\n3. The Pre-Lab is worth 30 points. \u2192 SUPPORTED\n4. The Lab Assessment (Written) is worth 20 points. \u2192 SUPPORTED\n5. The Programming Assignment is worth 50 points. \u2192 SUPPORTED\n6. The total per lab is 100 points. \u2192 SUPPORTED\n7. There are 11 labs total. \u2192 SUPPORTED\n8. The lowest lab grade is dropped. \u2192 SUPPORTED\n9. The final lab grade is the average of the remaining 10 scores. \u2192 SUPPORTED\n10. Students should reach out to the faculty course instructor to find out the exact weight of the lab component. \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 1.0"
+      },
+      "answer_relevance": {
+        "score": 0.8362,
+        "reverse_questions": [
+          "How much does the lab component count toward my overall course grade?",
+          "How is my lab grade calculated and how many labs are there?",
+          "What is the grading breakdown for the labs and does my lowest grade get dropped?"
+        ],
+        "similarities": [
+          0.9896,
+          0.7867,
+          0.7324
+        ]
+      },
+      "generated_answer": "## Lab Component Grade Weight\n\nBased on your course materials, the exact **percentage of your overall course grade** that the lab component counts for is not explicitly stated in the syllabus. The materials simply note:\n\n> *\"These labs account to some percentage of your overall course grade. Check with your course Instructor.\"*\n\nSo for a definitive answer, **you'll need to check directly with your faculty course instructor**, as they are the one who determines how the lab grade factors into your final course grade.\n\n---\n\n### What the materials *do* tell you about lab grading internally:\n\nHere's how your **lab grade itself** is calculated:\n\n| Component | Points |\n|---|---|\n| Pre-Lab | 30 pts |\n| Lab Assessment (Written) | 20 pts |\n| Programming Assignment | 50 pts |\n| **Total per Lab** | **100 pts** |\n\n- There are **11 labs total**\n- Your **lowest lab grade is dropped**\n- Your final lab grade is the **average of the remaining 10 scores**\n\n---\n\n### Bottom Line:\nReach out to your **faculty course instructor** (not just your lab instructor) to find out the exact weight of the lab component in your overall course grade. They have the full grading breakdown for the lecture portion combined with labs. \ud83d\udcda"
+    },
+    {
+      "question": "When is the Prelab 1 assignment due?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.6238,
+        "num_chunks": 5,
+        "similarities": [
+          0.6309,
+          0.6309,
+          0.6263,
+          0.6263,
+          0.6048
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. Prelab 1 is due one hour before the start of the lab session \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 1.0,
+        "chunk_relevances": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "llm_response": "CHUNK 1: YES\nCHUNK 2: YES\nCHUNK 3: YES\nCHUNK 4: YES\nCHUNK 5: NO\nPRECISION_SCORE: 0.8"
+      },
+      "faithfulness": {
+        "score": 0.86,
+        "llm_response": "CLAIMS:\n1. Pre-Lab assignments open about 48 hours before Monday of each week \u2192 SUPPORTED\n2. Pre-Lab assignments are due 1 hour before your lab session \u2192 SUPPORTED\n3. Pre-Lab assignments are available on Canvas \u2192 SUPPORTED\n4. Pre-Lab is worth 30 points \u2192 SUPPORTED\n5. Lab Assessment is worth 20 points and due by the end of lab \u2192 SUPPORTED\n6. Programming Assignment is worth 50 points and due by the end of lab \u2192 SUPPORTED\n7. Due times can vary depending on when your lab is scheduled \u2192 NOT SUPPORTED\n\nFAITHFULNESS_SCORE: 0.86"
+      },
+      "answer_relevance": {
+        "score": 0.6445,
+        "reverse_questions": [
+          "When is Prelab 1 due?",
+          "How long do I have to complete the Pre-Lab assignment before it's due?",
+          "What are the different assignments and their point values for this lab course?"
+        ],
+        "similarities": [
+          0.8343,
+          0.674,
+          0.4251
+        ]
+      },
+      "generated_answer": "Based on the Canvas course materials, Pre-Lab assignments **open about 48 hours before Monday of each week and are due 1 hour before your lab session**.\n\nSo for Prelab 1 specifically, you would need to submit it **1 hour before your scheduled lab class**. The assignment should have been available on Canvas 48 hours before the first lab on Monday.\n\nHere's a quick summary of the assignment breakdown for context:\n- **Pre-Lab** (30 points) \u2013 Due 1 hour before your lab\n- **Lab Assessment** (20 points) \u2013 Due by the end of lab\n- **Programming Assignment** (50 points) \u2013 Due by the end of lab\n\nI'd recommend checking Canvas directly for the **exact date and time** of your specific lab section, as due times can vary depending on when your lab is scheduled. If you're still unsure, reach out to your lab instructor! \ud83d\ude0a"
+    },
+    {
+      "question": "What machine learning algorithm will we use for sentiment classification in this course?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.5958,
+        "num_chunks": 5,
+        "similarities": [
+          0.6544,
+          0.6389,
+          0.5984,
+          0.5773,
+          0.5101
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. The course uses the Na\u00efve Bayes algorithm for sentiment classification \u2192 SUPPORTED\n2. The sentiment classification is a hands-on application \u2192 SUPPORTED\n3. The sentiment classification is a practical application of NLP concepts covered in the course \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 0.95,
+        "chunk_relevances": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ],
+        "llm_response": "CHUNK 1: YES\nCHUNK 2: YES\nCHUNK 3: YES\nCHUNK 4: NO\nCHUNK 5: YES\nPRECISION_SCORE: 0.8"
+      },
+      "faithfulness": {
+        "score": 0.92,
+        "llm_response": "CLAIMS:\n1. The algorithm used for sentiment classification is the Na\u00efve Bayes algorithm \u2192 SUPPORTED\n2. Sentiment classification is covered in Lesson B1.3: Classification \u2192 SUPPORTED\n3. Students will learn how the Na\u00efve Bayes algorithm works \u2192 SUPPORTED\n4. Students will implement text classification on a real dataset \u2192 SUPPORTED\n5. The hands-on application is applied to IMDB movie reviews \u2192 SUPPORTED\n6. Students will evaluate the performance of the classifier \u2192 SUPPORTED\n7. B1.1 covers cleaning and preprocessing text \u2192 SUPPORTED\n8. B1.2 covers converting text into tokens and a document-feature matrix \u2192 SUPPORTED\n9. B1.3 applies Na\u00efve Bayes to classify sentiment such as positive vs. negative movie reviews \u2192 SUPPORTED\n10. Na\u00efve Bayes is interpretable, efficient, and works well on text data despite simplifying assumptions \u2192 NOT SUPPORTED\n11. Students need to pass the quiz after Lesson B1.3 with at least 70% \u2192 SUPPORTED\n12. Students need to understand both the algorithm and how to evaluate a binary classifier \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 0.92"
+      },
+      "answer_relevance": {
+        "score": 0.5846,
+        "reverse_questions": [
+          "What algorithm will we be using for sentiment classification in this course?",
+          "What is covered in Lesson B1.3 and how does it relate to the rest of the module?",
+          "What dataset will we be working with when learning about text classification?"
+        ],
+        "similarities": [
+          0.9503,
+          0.2008,
+          0.6026
+        ]
+      },
+      "generated_answer": "## Sentiment Classification Algorithm in This Course\n\nBased on your course materials, the algorithm you'll be using for sentiment classification is the **Na\u00efve Bayes algorithm**! \ud83c\udfaf\n\nThis is covered in **Lesson B1.3: Classification**, which is the final lesson in the module. Specifically, you'll be:\n\n- **Learning** how the Na\u00efve Bayes algorithm works\n- **Implementing** text classification on a real dataset\n- **Applying** it to **IMDB movie reviews** as a hands-on example\n- **Evaluating** the performance of the classifier\n\n### What to Expect\nThe course builds up to this progressively:\n1. **B1.1** \u2013 You'll first learn to clean and preprocess text\n2. **B1.2** \u2013 Then convert text into tokens and a document-feature matrix\n3. **B1.3** \u2013 Finally, apply Na\u00efve Bayes to classify sentiment (e.g., positive vs. negative movie reviews)\n\nNa\u00efve Bayes is a great starting algorithm for NLP because it's interpretable, efficient, and works surprisingly well on text data even with its simplifying assumptions. \ud83d\ude0a\n\nDon't forget \u2014 you'll need to pass the **quiz after Lesson B1.3 with at least 70%**, so make sure you understand both the algorithm and how to evaluate a binary classifier. Good luck!"
+    },
+    {
+      "question": "Is there a lab session during the first week of class?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.6152,
+        "num_chunks": 5,
+        "similarities": [
+          0.6403,
+          0.6403,
+          0.6056,
+          0.6056,
+          0.5841
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. The lab will not be held during the first week of class \u2192 SUPPORTED\n2. Students are expected to attend starting from the second week \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 0.4167,
+        "chunk_relevances": [
+          false,
+          false,
+          true,
+          true,
+          false
+        ],
+        "llm_response": "CHUNK 1: NO\nCHUNK 2: NO\nCHUNK 3: YES\nCHUNK 4: YES\nCHUNK 5: NO\nPRECISION_SCORE: 0.4"
+      },
+      "faithfulness": {
+        "score": 0.9,
+        "llm_response": "CLAIMS:\n1. There is no lab session during the first week of class \u2192 SUPPORTED\n2. The lab instructor is Swarna Chakraborty \u2192 SUPPORTED\n3. The quote \"Please note that the lab will not be held during the first week of class. I look forward to seeing everyone in the second week.\" is from the welcome message \u2192 SUPPORTED\n4. The first lab session begins in week two \u2192 SUPPORTED\n5. Pre-lab assignments may open up before the first lab session \u2192 NOT SUPPORTED (the source says pre-labs open about 48 hours before Monday of every week, but no specific claim about pre-labs opening before week two's lab is made)\n\nFAITHFULNESS_SCORE: 0.9"
+      },
+      "answer_relevance": {
+        "score": 0.7396,
+        "reverse_questions": [
+          "Is there a lab during the first week of class?",
+          "When does the lab start this semester?",
+          "Do I need to attend lab this week?"
+        ],
+        "similarities": [
+          0.9065,
+          0.669,
+          0.6434
+        ]
+      },
+      "generated_answer": "Based on your course materials, **no, there is no lab session during the first week of class.**\n\nYour lab instructor, Swarna Chakraborty, confirmed this in a welcome message:\n\n> *\"Please note that the lab will not be held during the first week of class. I look forward to seeing everyone in the second week.\"*\n\nSo you can expect your first lab session to begin in **week two**. Make sure to check Canvas for any pre-lab assignments that may open up before then! \ud83d\udcda"
+    },
+    {
+      "question": "What score do I need to achieve on the quizzes to pass this module?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.56,
+        "num_chunks": 5,
+        "similarities": [
+          0.7117,
+          0.5791,
+          0.5302,
+          0.5013,
+          0.4776
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. You need to achieve a score of 70% or better to pass the quizzes \u2192 SUPPORTED\n2. There are two quizzes required to pass the module \u2192 SUPPORTED\n3. One quiz is on tokens and n-grams \u2192 SUPPORTED\n4. One quiz is on classification \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 0.9167,
+        "chunk_relevances": [
+          true,
+          true,
+          false,
+          true,
+          false
+        ],
+        "llm_response": "CHUNK 1: YES\nCHUNK 2: YES\nCHUNK 3: NO\nCHUNK 4: YES\nCHUNK 5: NO\n\nPRECISION_SCORE: 0.6"
+      },
+      "faithfulness": {
+        "score": 0.8,
+        "llm_response": "CLAIMS:\n1. You need to achieve a score of at least 70% on the quizzes to pass this module \u2192 SUPPORTED\n2. There are two quizzes you need to complete \u2192 SUPPORTED\n3. Quiz #1 covers tokens and n-grams \u2192 SUPPORTED\n4. Quiz #1 is after Lesson B1.2 \u2192 SUPPORTED\n5. Quiz #2 covers classification \u2192 SUPPORTED\n6. Quiz #2 is after Lesson B1.3 \u2192 SUPPORTED\n7. You have 3 attempts for each quiz \u2192 NOT SUPPORTED (only Quiz #2 is explicitly stated to have 3 attempts; no mention of 3 attempts for Quiz #1)\n8. Your highest score is the one that gets recorded \u2192 NOT SUPPORTED (only stated for Quiz #2, not confirmed for Quiz #1)\n9. For Quiz #2, you should review the instructions file \u2192 SUPPORTED\n10. For Quiz #2, you should use the provided spam dataset \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 0.8"
+      },
+      "answer_relevance": {
+        "score": 0.7659,
+        "reverse_questions": [
+          "What score do I need to pass the quizzes in this module?",
+          "How many attempts do I get for each quiz and how is my score recorded?",
+          "What are the quizzes about and are there any special instructions I need to follow?"
+        ],
+        "similarities": [
+          0.9788,
+          0.679,
+          0.6398
+        ]
+      },
+      "generated_answer": "Based on your course materials, you need to achieve a score of **at least 70%** on the quizzes to pass this module.\n\nHere are a few additional details to keep in mind:\n\n- There are **two quizzes** you need to complete:\n  - **Quiz #1** \u2013 covers tokens and n-grams (after Lesson B1.2)\n  - **Quiz #2** \u2013 covers classification (after Lesson B1.3)\n- You have **3 attempts** for each quiz, and your **highest score** is the one that gets recorded \u2014 so don't stress if your first attempt doesn't go as planned!\n- For Quiz #2, make sure to review the instructions file and use the provided spam dataset when completing your submission.\n\nGood luck! \ud83c\udf89"
+    },
+    {
+      "question": "How many points out of the lab grade are dedicated to style guidelines?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.5767,
+        "num_chunks": 5,
+        "similarities": [
+          0.6134,
+          0.6134,
+          0.5611,
+          0.5611,
+          0.5342
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. 5 points are dedicated to style guidelines \u2192 SUPPORTED\n2. The 5 points come out of the 50 points for the Program portion of the lab \u2192 SUPPORTED\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 1.0,
+        "chunk_relevances": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "llm_response": "CHUNK 1: YES\nCHUNK 2: YES\nCHUNK 3: NO\nCHUNK 4: NO\nCHUNK 5: NO\nPRECISION_SCORE: 0.4"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. 5 points out of the 50 points allocated to the Programming portion are dedicated to style guidelines \u2192 SUPPORTED\n2. Name and netID must be in a comment at the top of the file \u2192 SUPPORTED\n3. Variable names must be descriptive \u2192 SUPPORTED\n4. Each line must be no longer than 80 characters in length \u2192 SUPPORTED\n5. Nested blocks of code must be indented consistently \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 1.0"
+      },
+      "answer_relevance": {
+        "score": 0.6867,
+        "reverse_questions": [
+          "How many points are dedicated to style guidelines in the Programming portion of the lab?",
+          "What are the style guidelines I need to follow for my programming assignments?",
+          "How much of my grade depends on following style rules, and what exactly do those rules require?"
+        ],
+        "similarities": [
+          0.9029,
+          0.4883,
+          0.669
+        ]
+      },
+      "generated_answer": "Based on your course syllabus, **5 points out of the 50 points** allocated to the Programming portion of the lab are dedicated to style guidelines.\n\nHere's a quick reminder of what those style guidelines require:\n- **Name and netID** must be in a comment at the top of the file\n- **Variable names** must be descriptive\n- **Each line** must be no longer than 80 characters in length\n- **Nested blocks of code** must be indented consistently\n\nSo make sure to follow those rules carefully to earn all 5 style points on your programming assignments!"
+    },
+    {
+      "question": "How many attempts do I get on Quiz #2, and how is my score calculated?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.4931,
+        "num_chunks": 5,
+        "similarities": [
+          0.5855,
+          0.506,
+          0.4777,
+          0.4501,
+          0.4461
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. You have 3 attempts to complete Quiz #2 \u2192 SUPPORTED\n2. The highest score achieved across attempts is the one recorded \u2192 SUPPORTED\n3. You must score 70% or higher to finish the section \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 0.3333,
+        "chunk_relevances": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ],
+        "llm_response": "I'll evaluate each chunk for usefulness in answering the question about Quiz #2 attempts and score calculation.\n\nCHUNK 1: NO\nCHUNK 2: NO\nCHUNK 3: YES\nCHUNK 4: NO\nCHUNK 5: NO\n\nNow I'll calculate the average precision:\n\n- Chunk 3 is the only relevant chunk (rank 3)\n- Precision at rank 3 = 1/3\n\nPRECISION_SCORE: 0.33"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. Quiz #2 is the Classification quiz after Lesson B1.3 \u2192 SUPPORTED\n2. You get 3 attempts on Quiz #2 \u2192 SUPPORTED\n3. The highest score of your attempts is the one recorded \u2192 SUPPORTED\n4. You need to score 70% or higher to successfully complete the quiz \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 1.0"
+      },
+      "answer_relevance": {
+        "score": 0.7451,
+        "reverse_questions": [
+          "How many attempts do I get for Quiz #2?",
+          "How is my score calculated for the Classification quiz?",
+          "What is the minimum passing score required for Quiz #2?"
+        ],
+        "similarities": [
+          0.8913,
+          0.6936,
+          0.6504
+        ]
+      },
+      "generated_answer": "Based on your course materials, for **Quiz #2** (the Classification quiz after Lesson B1.3):\n\n- **Attempts:** You get **3 attempts**\n- **Score Calculation:** The **highest score** of your attempts is the one that gets recorded\n\nAlso, keep in mind that you need to score **70% or higher** to successfully complete the quiz. Good luck! \ud83c\udf89"
+    },
+    {
+      "question": "What is the difference between `=` and `==` in C++, and why is confusing them a common mistake?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.5354,
+        "num_chunks": 5,
+        "similarities": [
+          0.5414,
+          0.5414,
+          0.533,
+          0.533,
+          0.5283
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. `=` is the assignment operator in C++ \u2192 SUPPORTED\n2. `=` assigns a value to a variable \u2192 SUPPORTED\n3. `==` is the comparison operator in C++ \u2192 SUPPORTED\n4. `==` checks if two values are equal \u2192 SUPPORTED\n5. Confusing `=` and `==` is a common mistake \u2192 SUPPORTED\n6. Using `=` inside an `if` statement (like `if (num3 = num1)`) will assign the value rather than compare \u2192 SUPPORTED\n7. Using `=` in an `if` condition leads to unintended behavior instead of a true equality check \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 0.4778,
+        "chunk_relevances": [
+          false,
+          false,
+          true,
+          true,
+          true
+        ],
+        "llm_response": "CHUNK 1: NO\nCHUNK 2: NO\nCHUNK 3: YES\nCHUNK 4: YES\nCHUNK 5: YES\nPRECISION_SCORE: 0.6"
+      },
+      "faithfulness": {
+        "score": 0.75,
+        "llm_response": "CLAIMS:\n1. `=` is the assignment operator \u2192 SUPPORTED\n2. `==` is the comparison operator \u2192 SUPPORTED\n3. Confusing `=` and `==` is a common mistake \u2192 SUPPORTED\n4. `=` sets a variable's value \u2192 SUPPORTED\n5. `==` compares two values and returns true or false \u2192 SUPPORTED\n6. Using `=` inside an `if` statement is valid but incorrect in C++ \u2192 SUPPORTED\n7. The example `if (num3 = num1)` assigns num1's value to num3 instead of comparing them \u2192 SUPPORTED\n8. The program won't crash when `=` is used instead of `==` in a condition \u2192 NOT SUPPORTED\n9. You won't always get a compiler error when using `=` instead of `==` in a condition \u2192 NOT SUPPORTED\n10. The bug is hard to track down because it silently does the wrong thing \u2192 NOT SUPPORTED\n11. The course materials use `int num3 = 20` and `int num1 = 10` in the example \u2192 SUPPORTED\n12. The course materials emphasize never using the assignment operator in a condition \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 0.75"
+      },
+      "answer_relevance": {
+        "score": 0.7167,
+        "reverse_questions": [
+          "What is the difference between `=` and `==` in C++?",
+          "Why does my `if` statement always seem to change my variable's value instead of checking it?",
+          "Is it a compiler error if I accidentally use `=` instead of `==` inside an `if` statement?"
+        ],
+        "similarities": [
+          0.9774,
+          0.4447,
+          0.7281
+        ]
+      },
+      "generated_answer": "# The Difference Between `=` and `==` in C++\n\nGreat question! This is one of the most common mistakes beginners make, and your course materials specifically call it out.\n\n## `=` \u2014 The Assignment Operator\nThis **sets** a variable's value. For example:\n```cpp\nint x = 10; // stores 10 into x\n```\n\n## `==` \u2014 The Comparison Operator\nThis **compares** two values and returns true or false. This is what you use inside conditions:\n```cpp\nif (x == 10) // checks: is x equal to 10?\n```\n\n---\n\n## Why Is Confusing Them So Dangerous?\n\nAs your course materials point out, using `=` inside an `if` statement is a **valid but incorrect** thing to do in C++. Here's the exact example from your course notes:\n\n```cpp\nint num3 = 20;\nint num1 = 10;\n\nif (num3 = num1) // \u274c This ASSIGNS num1's value to num3!\n{\n    cout << num3 << \" is equal to \" << num1 << endl;\n}\n```\n\nInstead of *checking* if they're equal, this **overwrites** `num3` with the value of `num1`. The program won't crash, and you won't always get a compiler error \u2014 it just silently does the **wrong thing**, making the bug very hard to track down.\n\n---\n\n## \ud83d\udca1 Key Takeaway\nYour course materials emphasize this directly:\n- **`=`** \u2192 Assignment (stores a value)\n- **`==`** \u2192 Comparison (tests equality)\n\nAlways double-check your `if` statement conditions to make sure you're using `==` when you mean to compare!"
+    },
+    {
+      "question": "What is Dr. Alanis's academic background and where did he get his PhD?",
+      "has_reference": true,
+      "num_contexts_retrieved": 2,
+      "context_relevance": {
+        "score": 0.2666,
+        "num_chunks": 2,
+        "similarities": [
+          0.3151,
+          0.2181
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. Dr. Alanis is an Associate Professor of Finance \u2192 SUPPORTED\n2. Dr. Alanis is at the McCoy College of Business \u2192 SUPPORTED\n3. Dr. Alanis is at Texas State University \u2192 SUPPORTED\n4. Dr. Alanis received his PhD from Texas A&M University \u2192 SUPPORTED\n5. His research focuses on credit risk prediction \u2192 SUPPORTED\n6. His research focuses on corporate debt and investment \u2192 SUPPORTED\n7. His research focuses on machine learning prediction of systematic risk in stocks \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 1.0,
+        "chunk_relevances": [
+          true,
+          true
+        ],
+        "llm_response": "CHUNK 1: YES\nCHUNK 2: YES\nPRECISION_SCORE: 1.0"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. Dr. Emmanuel Alanis is an Associate Professor of Finance \u2192 SUPPORTED\n2. He is at the McCoy College of Business at Texas State University \u2192 SUPPORTED\n3. He received his PhD from Texas A&M University \u2192 SUPPORTED\n4. His research interests include credit risk prediction and how it is priced in loan contracts \u2192 SUPPORTED\n5. His research interests include the impact of debt on corporate investment \u2192 SUPPORTED\n6. His research interests include machine learning prediction of systematic risk in stocks \u2192 SUPPORTED\n7. His research has been published in the Review of Corporate Finance Studies \u2192 SUPPORTED\n8. His research has been published in the Journal of Banking and Finance \u2192 SUPPORTED\n9. His research has been published in the Journal of Financial Research \u2192 SUPPORTED\n10. He co-authored a book titled A Practical Guide to Exploring Macroeconomic Data with Python \u2192 SUPPORTED\n11. He received the McCoy College Achievement Award for Research \u2192 SUPPORTED\n12. He received the Presidential Distinction Award for Excellence in Service \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 1.0"
+      },
+      "answer_relevance": {
+        "score": 0.695,
+        "reverse_questions": [
+          "What is Dr. Alanis's academic background and research interests?",
+          "Who is the professor teaching this course and what are their qualifications?",
+          "What publications and awards has Dr. Alanis received throughout his academic career?"
+        ],
+        "similarities": [
+          0.9056,
+          0.379,
+          0.8003
+        ]
+      },
+      "generated_answer": "## Dr. Alanis's Academic Background\n\nBased on your course materials, here's what we know about Dr. Emmanuel Alanis:\n\n- **Title & Position:** Associate Professor of Finance at the **McCoy College of Business at Texas State University**\n- **PhD:** He received his doctorate from **Texas A&M University**\n\n### Research Interests:\n- Credit risk prediction and how it is priced in loan contracts\n- The impact of debt on corporate investment\n- Machine learning prediction of systematic risk in stocks\n\n### Publications & Achievements:\nHis research has been published in several prestigious academic journals, including:\n- *Review of Corporate Finance Studies*\n- *Journal of Banking and Finance*\n- *Journal of Financial Research*\n\nHe has also **co-authored a book** titled *A Practical Guide to Exploring Macroeconomic Data with Python*, and has received notable awards including the **McCoy College Achievement Award for Research** and the **Presidential Distinction Award for Excellence in Service**.\n\nIn short, Dr. Alanis brings a strong blend of **finance, credit risk analysis, and machine learning expertise** to this course, which is reflected in the NLP and data-driven focus of the coursework! \ud83d\ude0a"
+    },
+    {
+      "question": "How many points out of the lab are allocated to style guidelines?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.5193,
+        "num_chunks": 5,
+        "similarities": [
+          0.5388,
+          0.5388,
+          0.5154,
+          0.5154,
+          0.4882
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. 5 points are allocated to style guidelines \u2192 SUPPORTED\n2. The 5 points come out of the 50 points for the Program portion of the lab \u2192 SUPPORTED\n3. Style requirements include having your name and netID in a comment at the top of the file \u2192 SUPPORTED\n4. Style requirements include using descriptive variable names \u2192 SUPPORTED\n5. Style requirements include keeping each line no longer than 80 characters \u2192 SUPPORTED\n6. Style requirements include consistently indenting nested blocks of code \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 1.0,
+        "chunk_relevances": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "llm_response": "CHUNK 1: YES\nCHUNK 2: YES\nCHUNK 3: NO\nCHUNK 4: NO\nCHUNK 5: NO\nPRECISION_SCORE: 0.4"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. 5 points out of the 50 points for the Programming Assignment portion are designated for style guidelines \u2192 SUPPORTED\n2. Name and netID must be in a comment at the top of the file \u2192 SUPPORTED\n3. Variable names must be descriptive \u2192 SUPPORTED\n4. Each line in the program must be no longer than 80 characters \u2192 SUPPORTED\n5. Nested blocks of code must be indented consistently \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 1.0"
+      },
+      "answer_relevance": {
+        "score": 0.5195,
+        "reverse_questions": [
+          "How many points are allocated for style in the programming assignment?",
+          "What are the style guidelines I need to follow for the lab programming assignments?",
+          "How can I make sure I get full credit on the programming assignment portion of the lab?"
+        ],
+        "similarities": [
+          0.6633,
+          0.6035,
+          0.2918
+        ]
+      },
+      "generated_answer": "Based on your course materials, **5 points out of the 50 points** allocated to the Programming Assignment portion of the lab are designated for style guidelines.\n\nHere's a quick recap of the style requirements you need to follow to earn those points:\n\n- **Name and netID** must be in a comment at the top of the file\n- **Variable names** must be descriptive\n- **Each line** in the program must be no longer than **80 characters**\n- **Nested blocks of code** must be indented consistently\n\nSo make sure to keep these in mind when submitting your programming assignments \u2014 they're an easy way to secure those points!"
+    },
+    {
+      "question": "Where can I get help setting up an IDE like CodeBlocks for the lab?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.5002,
+        "num_chunks": 5,
+        "similarities": [
+          0.5076,
+          0.5076,
+          0.497,
+          0.497,
+          0.4917
+        ]
+      },
+      "context_recall": {
+        "score": 0.0,
+        "llm_response": "CLAIMS:\n1. The instructor will be available on Zoom during lab hours to answer questions \u2192 NOT SUPPORTED\n2. Setup instructions for an IDE like CodeBlocks exist \u2192 NOT SUPPORTED\n3. Setup instructions can be found in the \"Announcements\" menu \u2192 NOT SUPPORTED\n4. The \"Announcements\" menu is on the left side of the course \u2192 NOT SUPPORTED\n\nRECALL_SCORE: 0.0"
+      },
+      "context_precision": {
+        "score": 0.0,
+        "chunk_relevances": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "llm_response": "I need to evaluate each chunk for usefulness in answering the question about getting help setting up an IDE like CodeBlocks.\n\nThe reference answer mentions:\n1. Instructor available on Zoom during lab hours\n2. Setup instructions in the \"Announcements\" menu on the left side of the course\n\nThe chunks only show filenames, not content. Based on the filenames:\n- \"Lab 1 Debugging Guide.pdf\" - might contain IDE setup info as debugging often requires IDE setup\n- \"Lab 4 Extra Programming Practice.pdf\" - unlikely to contain IDE setup help\n- \"Lab 8 Extra Programming Practice.pdf\" - unlikely to contain IDE setup help\n\nHowever, since I cannot see the actual content of the chunks, only their filenames, and the filenames suggest debugging guides and extra programming practice rather than IDE setup instructions or Zoom/instructor availability information, none of these chunks appear likely to contain the relevant information from the reference answer.\n\nCHUNK 1: NO\nCHUNK 2: NO\nCHUNK 3: NO\nCHUNK 4: NO\nCHUNK 5: NO\nPRECISION_SCORE: 0.0"
+      },
+      "faithfulness": {
+        "score": 0.1,
+        "llm_response": "CLAIMS:\n1. The Canvas materials retrieved don't contain specific instructions for setting up Code::Blocks \u2192 SUPPORTED\n2. Lab TAs / Instructors can help with installation during office hours \u2192 NOT SUPPORTED\n3. The course has a Lab 1 Debugging Guide on Canvas \u2192 SUPPORTED\n4. The Lab 1 Debugging Guide may contain helpful context for getting your environment ready \u2192 NOT SUPPORTED\n5. Code::Blocks can be downloaded from codeblocks.org \u2192 NOT SUPPORTED\n6. The version bundled with MinGW should be downloaded if on Windows \u2192 NOT SUPPORTED\n7. MinGW should be selected as the compiler during installation \u2192 NOT SUPPORTED\n8. Installation can be tested by compiling a \"Hello World\" program \u2192 NOT SUPPORTED\n9. A Course Discussion Board exists where questions can be posted \u2192 NOT SUPPORTED\n10. The Course Syllabus may contain setup instructions or links \u2192 NOT SUPPORTED\n\nFAITHFULNESS_SCORE: 0.1"
+      },
+      "answer_relevance": {
+        "score": 0.4718,
+        "reverse_questions": [
+          "How do I set up Code::Blocks for this class?",
+          "Where can I find installation instructions for Code::Blocks?",
+          "I'm having trouble installing Code::Blocks, who can I ask for help?"
+        ],
+        "similarities": [
+          0.3815,
+          0.5387,
+          0.4951
+        ]
+      },
+      "generated_answer": "## Getting Help with Code::Blocks Setup\n\nThe Canvas materials retrieved don't contain specific instructions for setting up Code::Blocks, but here are some great places to get help:\n\n- \ud83e\uddd1\u200d\ud83c\udfeb **Lab TAs / Instructors** \u2013 Your best bet! Visit **office hours** and ask for hands-on help with installation. They'll know exactly what setup is expected for your specific lab environment.\n\n- \ud83d\udccb **Course Syllabus** \u2013 Check if there are any setup instructions or links provided there.\n\n- \ud83d\udcac **Course Discussion Board** \u2013 Post your question! Other students may have already gone through the setup process and can share tips, especially if you're on a specific operating system (Windows, Mac, or Linux).\n\n- \ud83d\udcc4 **Lab Debugging Guide (Lab 1)** \u2013 Your course has a *Lab 1 Debugging Guide* on Canvas, which may contain some helpful context for getting your environment ready. It's worth checking that out!\n\n### Quick Tips for Code::Blocks Setup:\n1. Download it from [codeblocks.org](http://www.codeblocks.org) \u2014 make sure to get the version **bundled with MinGW** (the compiler) if you're on Windows.\n2. During installation, select **MinGW** as your compiler.\n3. Test it by compiling a simple \"Hello World\" program.\n\nI'd recommend reaching out to your **TA during office hours** for the most course-specific guidance! \ud83d\ude0a"
+    },
+    {
+      "question": "How should I name a constant variable in C++, and can you give an example?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.5421,
+        "num_chunks": 5,
+        "similarities": [
+          0.5621,
+          0.5621,
+          0.5319,
+          0.5319,
+          0.5227
+        ]
+      },
+      "context_recall": {
+        "score": 0.5,
+        "llm_response": "CLAIMS:\n1. Constants should be defined using `const` \u2192 SUPPORTED\n2. Constant names should be written in all capitals \u2192 SUPPORTED\n3. Underscores should be used to separate words in constant names \u2192 NOT SUPPORTED\n4. `const double TAX_RATE = 0.0675;` is a valid example of a constant variable \u2192 NOT SUPPORTED\n\nRECALL_SCORE: 0.5"
+      },
+      "context_precision": {
+        "score": 1.0,
+        "chunk_relevances": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "llm_response": "CHUNK 1: YES\nCHUNK 2: YES\nCHUNK 3: NO\nCHUNK 4: NO\nCHUNK 5: NO\nPRECISION_SCORE: 0.4"
+      },
+      "faithfulness": {
+        "score": 0.54,
+        "llm_response": "CLAIMS:\n1. The convention is to write constant variable names in ALL CAPITALS \u2192 SUPPORTED\n2. Writing in ALL CAPS helps remind you that the variable is a constant and cannot be changed \u2192 SUPPORTED\n3. The example `const double PI = 3.14159;` comes from the course materials \u2192 SUPPORTED\n4. Use the `const` keyword before the data type \u2192 SUPPORTED\n5. Write the variable name in ALL CAPS \u2192 SUPPORTED\n6. Assign the value at the time of declaration (initialization) \u2192 SUPPORTED\n7. The value cannot be changed later in the program \u2192 SUPPORTED\n8. `const int MAX_STUDENTS = 30;` is a valid example \u2192 NOT SUPPORTED\n9. `const double TAX_RATE = 0.08;` is a valid example \u2192 NOT SUPPORTED\n10. The ALL CAPS naming isn't something the compiler enforces \u2192 NOT SUPPORTED\n11. The program would still work if you used lowercase \u2192 NOT SUPPORTED\n12. ALL CAPS naming is an important coding convention that makes code easier to read and maintain \u2192 NOT SUPPORTED\n13. Seeing `PI` vs `myVariable` immediately signals that `PI` is a fixed value \u2192 NOT SUPPORTED\n\nFAITHFULNESS_SCORE: 0.54"
+      },
+      "answer_relevance": {
+        "score": 0.8202,
+        "reverse_questions": [
+          "What is the naming convention for constant variables in C++?",
+          "How do I declare a constant variable in C++?",
+          "Why do we write constant variable names in all capitals in C++?"
+        ],
+        "similarities": [
+          0.8914,
+          0.8982,
+          0.6709
+        ]
+      },
+      "generated_answer": "## Naming Constant Variables in C++\n\nAccording to your course materials, the convention is to **write constant variable names in ALL CAPITALS**. This helps remind you (and others reading your code) that the variable is a constant and cannot be changed.\n\n### Example from your course materials:\n```cpp\nconst double PI = 3.14159;\n```\n\n### Key points to remember:\n- Use the `const` keyword before the data type\n- Write the variable name in **ALL CAPS**\n- Assign the value at the time of declaration (initialization)\n- The value **cannot be changed** later in the program\n\n### Another example putting it all together:\n```cpp\nconst int MAX_STUDENTS = 30;\nconst double TAX_RATE = 0.08;\n```\n\nThe ALL CAPS naming isn't something the compiler enforces \u2014 your program would still work if you used lowercase \u2014 but it's an important **coding convention** that makes your code much easier to read and maintain. When you or someone else sees `PI` vs `myVariable`, it immediately signals that `PI` is a fixed value that won't change throughout the program."
+    },
+    {
+      "question": "Will lab be held during the first week of class?",
+      "has_reference": true,
+      "num_contexts_retrieved": 5,
+      "context_relevance": {
+        "score": 0.6819,
+        "num_chunks": 5,
+        "similarities": [
+          0.7182,
+          0.7182,
+          0.6733,
+          0.6733,
+          0.6266
+        ]
+      },
+      "context_recall": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. Lab will not be held during the first week of class \u2192 SUPPORTED\n2. Students are expected to attend starting from the second week \u2192 SUPPORTED\n\nRECALL_SCORE: 1.0"
+      },
+      "context_precision": {
+        "score": 0.4167,
+        "chunk_relevances": [
+          false,
+          false,
+          true,
+          true,
+          false
+        ],
+        "llm_response": "I'll evaluate each chunk for usefulness in answering whether lab will be held during the first week of class.\n\nCHUNK 1: NO\nCHUNK 2: NO\nCHUNK 3: YES\nCHUNK 4: YES\nCHUNK 5: NO\n\nPRECISION_SCORE: 0.4"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "llm_response": "CLAIMS:\n1. Lab will not be held during the first week of class \u2192 SUPPORTED\n2. The lab instructor is Swarna Chakraborty \u2192 SUPPORTED\n3. Swarna Chakraborty confirmed this in a course welcome message \u2192 SUPPORTED\n4. She looks forward to seeing everyone starting in the second week \u2192 SUPPORTED\n\nFAITHFULNESS_SCORE: 1.0"
+      },
+      "answer_relevance": {
+        "score": 0.8208,
+        "reverse_questions": [
+          "Will lab be held during the first week of class?",
+          "Do I need to attend lab this week?",
+          "When does lab start?"
+        ],
+        "similarities": [
+          1.0,
+          0.7605,
+          0.7018
+        ]
+      },
+      "generated_answer": "Based on your course materials, **no, lab will not be held during the first week of class**. Your lab instructor, Swarna Chakraborty, confirmed this in the course welcome message and noted that she looks forward to seeing everyone starting in the **second week**.\n\nSo no need to worry about showing up for lab in week one! Just make sure you're ready to go starting the following week. \ud83d\ude0a"
+    }
+  ]
+}
